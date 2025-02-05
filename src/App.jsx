@@ -1,6 +1,7 @@
 import './App.css'
 import TypeIt from 'typeit'
 import { useEffect } from 'react';
+import Navbar from './components/Navbar';
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
 
   return (
     <>
+      
       <div className="container">
         <div className="item">
           <h1 id="title">Hi, my name is Chris!<br />This is my website!</h1>
@@ -24,6 +26,7 @@ function App() {
           </ul>
         </div>
       </div>
+      <Navbar></Navbar>
     </>
   )
 }

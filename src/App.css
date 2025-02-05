@@ -7,10 +7,22 @@
 
 .container {
   justify-content: space-between;
+  justify-self: center;
   align-items: center;
   display: flex;
-  width: 1000px;
-  height: 500px;
+  flex-wrap: wrap;
+  width: 60em;
+  height: 25em;
+  /* border: 3px solid blue; */
+}
+
+#Navbar {
+  justify-content: space-evenly;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  width: 75em;
+  margin-bottom: 5em;
   /* border: 3px solid blue; */
 }
 
