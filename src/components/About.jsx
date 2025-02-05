@@ -27,7 +27,6 @@ function About() {
             </ul>
           </div>
         </div>
-        <Navbar></Navbar>
       </>
     )
   }

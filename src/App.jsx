@@ -33,6 +33,7 @@ function App() {
           <Route path="/work" element={<Work />} />
         </Routes>
       </AnimatePresence>
+      <Navbar />
     </>
   )
 }

@@ -32,7 +32,6 @@ function Home() {
           </ul>
         </div>
       </div>
-      <Navbar />
     </>
   )
 }

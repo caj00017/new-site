@@ -27,7 +27,6 @@ function Work() {
             </ul>
           </div>
         </div>
-        <Navbar></Navbar>
       </>
     )
   }

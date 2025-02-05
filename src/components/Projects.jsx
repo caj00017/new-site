@@ -27,7 +27,6 @@ function Projects() {
             </ul>
           </div>
         </div>
-        <Navbar></Navbar>
       </>
     )
   }
