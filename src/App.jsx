@@ -1,9 +1,20 @@
 import './App.css'
 import TypeIt from 'typeit'
 import { useEffect } from 'react';
+import { Routes, Route, useLocation } from "react-router-dom";
+import { AnimatePresence } from 'framer-motion';
+
 import Navbar from './components/Navbar';
+import About from './components/About';
+import Projects from './components/Projects';
+import Work from './components/Work';
+import Home from './components/Home';
+
+import transition from './transition';
 
 function App() {
+
+  const location = useLocation();
 
   useEffect(() => {
     new TypeIt("#title", {
@@ -14,21 +25,16 @@ function App() {
 
   return (
     <>
-      
-      <div className="container">
-        <div className="item">
-          <h1 id="title">Hi, my name is Chris!<br />This is my website!</h1>
-        </div>
-        <div className="item">
-          <ul>
-            <li>This website is a work in progress.</li>
-            <li>Come back later to see what's up!</li>
-          </ul>
-        </div>
-      </div>
-      <Navbar></Navbar>
+      <AnimatePresence mode="wait">
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/work" element={<Work />} />
+        </Routes>
+      </AnimatePresence>
     </>
   )
 }
 
-export default App
+export default App;
