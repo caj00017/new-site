@@ -12,9 +12,9 @@
   justify-content: space-between;
   justify-self: center;
   align-items: center;
-  width: 100%;
+  width: 200%;
   max-width: 60em;
-  height: auto;
+  height: 20em;
   /* border: 3px solid blue; */
 }
 
@@ -25,10 +25,9 @@
   justify-content: space-evenly;
   justify-self: center;
   align-items: center;
-  width: 100%;
+  width: 250%;
   max-width: 75em;
-  margin-bottom: 5em;
-  border: 3px solid blue;
+  /* border: 3px solid blue; */
 }
 
 /* Ensure items wrap properly */
@@ -39,9 +38,12 @@
   padding: 1rem;
 }
 
+.item p {
+  text-align: left;
+}
+
 /* Mobile Sidebar Animations */
-.slide-in,
-.slide-out {
+.slide-in {
   position: fixed;
   top: 0;
   left: 0;
@@ -49,6 +51,16 @@
   height: 100vh;
   background: #0f0f0f;
   transform-origin: top;
+}
+
+.slide-out {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #0f0f0f;
+  transform-origin: bottom;
 }
 
 /* === MOBILE RESPONSIVENESS === */

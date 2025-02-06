@@ -23,7 +23,7 @@ function Home() {
     <>
       <div className="container">
         <div className="item">
-          <h1 id="title">Hi, my name is Chris!<br />This is my website!</h1>
+          <h1 id="title">Hi, my name is Chris.<br />This is my website!</h1>
         </div>
         <div className="item">
           <ul>
