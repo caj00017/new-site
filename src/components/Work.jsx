@@ -27,6 +27,8 @@ function Work() {
             </ul>
           </div>
           <div className='item'>
+            <h3>Robotics Instructor Intern | NASA Katherine Johnson IV&V Education Resource Center | Fairmont, WV</h3>
+            <h4>May 2023 – Aug 2023, May 2024 – Aug 2024</h4>
             <p>
               As of July 2024, my only relevant work experience has been with the NASA IV&V Education Resource Center as a Robotics Summer Instructor from May-August 2023 and 2024. My experiences with the ERC are detailed below. This essay was written on July 31st, 2023, on the final day of my first internship with the NASA ERC team.
             </p>

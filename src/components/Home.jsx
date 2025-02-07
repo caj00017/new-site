@@ -23,13 +23,18 @@ function Home() {
     <>
       <div className="container">
         <div className="item">
-          <h1 id="title">Hi, my name is Chris.<br />This is my website!</h1>
+          <h1 id="title">cjones.dev</h1>
         </div>
         <div className="item">
           <ul>
             <li>This website is a work in progress.</li>
             <li>Come back later to see what's up!</li>
           </ul>
+        </div>
+        <div className="item">
+            <p>
+              Hi! My name is Chris Jones. I'm creating this website to serve as an interactive portfolio/resume detailing my work/study experience and other things I've worked on. Linked below are pages where I go into a bit more detail about myself and the kind of stuff I like to do.
+            </p>
         </div>
       </div>
     </>
