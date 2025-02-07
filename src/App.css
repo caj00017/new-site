@@ -9,12 +9,11 @@
 .container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
   justify-self: center;
   align-items: center;
   width: 200%;
   max-width: 60em;
-  height: 20em;
   /* border: 3px solid blue; */
 }
 
@@ -25,7 +24,7 @@
   justify-content: space-evenly;
   justify-self: center;
   align-items: center;
-  width: 250%;
+  width: 100%;
   max-width: 75em;
   /* border: 3px solid blue; */
 }
@@ -61,6 +60,18 @@
   height: 100vh;
   background: #0f0f0f;
   transform-origin: bottom;
+}
+
+.header h1 {
+  text-align: center;
+  width: 100%;
+}
+
+.header {
+  /* border: 2px solid purple; */
+  justify-self: center;
+  align-items: center;
+  width: 250%;
 }
 
 /* === MOBILE RESPONSIVENESS === */
