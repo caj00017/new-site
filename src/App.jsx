@@ -3,7 +3,6 @@ import TypeIt from 'typeit'
 import { useEffect } from 'react';
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from 'framer-motion';
-import Header from './components/Header';
 
 import Navbar from './components/Navbar';
 import About from './components/About';
@@ -26,7 +25,6 @@ function App() {
 
   return (
     <>
-      <Header />
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home />} />
@@ -35,6 +33,7 @@ function App() {
           <Route path="/work" element={<Work />} />
         </Routes>
       </AnimatePresence>
+      <Navbar />
     </>
   )
 }
