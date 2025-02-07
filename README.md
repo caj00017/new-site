@@ -1,8 +1,11 @@
-# React + Vite
+# cjones.dev
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Hi! My name is Chris Jones. I'm creating this website to serve as an interactive portfolio/resume detailing my work/study experience and other things I've worked on.
+This is the code repository for my site. When development is complete, I will move the code to a new repository and make this one private. 
 
-Currently, two official plugins are available:
+The content of my website can be viewed at https://cjones.dev
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Contact/resume information is currently available on the site.
+
+Christopher Jones | v. February 2025
+
