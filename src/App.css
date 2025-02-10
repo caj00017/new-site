@@ -45,6 +45,15 @@
   display: block;
 }
 
+.item img {
+  max-width: 100%;
+  margin: 2em;
+}
+
+.subtitle {
+  text-align: center;
+}
+
 /* Mobile Sidebar Animations */
 .slide-in {
   position: fixed;
