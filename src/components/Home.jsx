@@ -13,6 +13,7 @@ function Home() {
   const location = useLocation();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     new TypeIt("#title", {
       speed: 25,
       waitUntilVisible: true,

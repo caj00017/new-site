@@ -8,6 +8,7 @@ import transition from '../transition';
 function About() {
 
     useEffect(() => {
+      window.scrollTo(0, 0);
       new TypeIt("#title", {
         speed: 25,
         waitUntilVisible: true,
