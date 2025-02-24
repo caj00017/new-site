@@ -1,5 +1,5 @@
 #root {
-  max-width: 100%;
+  max-width: 80%;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -14,7 +14,7 @@
   align-items: center;
   max-width: 100%;
   /* max-width: 60em; */
-  border: 3px solid blue;
+  /* border: 3px solid blue; */
 }
 
 /* Responsive Navbar */
@@ -26,14 +26,14 @@
   align-items: center;
   max-width: 100%;
   /* max-width: 75em; */
-  border: 3px solid blue;
+  /* border: 3px solid blue; */
 }
 
 /* Ensure items wrap properly */
 .item {
   display: flex;
   flex-wrap: wrap;
-  border: 3px solid red;
+  /* border: 3px solid red; */
   padding: 1rem;
   max-width: 100%;
 }
