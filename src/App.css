@@ -51,11 +51,14 @@
   margin: 2em;
 }
 
+.item ul {
+  text-align: left;
+}
+
 .subtitle {
   text-align: center;
 }
 
-/* Mobile Sidebar Animations */
 .slide-in {
   position: fixed;
   top: 0;
