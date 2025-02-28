@@ -30,10 +30,8 @@ function Projects() {
           <div className='container'>
           <div className='item'>
               <h2>Research Projects</h2>
-            </div>
-            <div className='item'>
               <h4>Research I have conducted as part of my WVU coursework so far.</h4>
-            </div>
+          </div>
             <div className='item'>
               <p><b>Author, Research Report: The Benefits and Drawbacks of Generative AI Use for Programming Work</b> (Unpublished, available upon request).</p>
               <ul>
@@ -41,12 +39,10 @@ function Projects() {
                 <li>Synthesized insights from scholarly research and interviews with faculty experts.</li>
                 <li>Explored ethical and practical implications of AI in software development, emphasizing best practices for effective AI use in the workplace.</li>
               </ul>
-              <p>A copy of my research report can be accessed <a href="">here</a>.</p>
+              <p>A copy of my research report can be accessed <a href="https://docs.google.com/document/d/16r7Xpsy2Y9nXnA7KpYg6BSHmOL50XLau0qD36neGq28/edit?tab=t.0" target="_blank">here</a>.</p>
             </div>
             <div className='item'>
               <h2>Academic Projects</h2>
-            </div>
-            <div className='item'>
               <h4>Other projects I have completed as part of my WVU coursework so far.</h4>
             </div>
             <div className='item'>

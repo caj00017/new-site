@@ -44,6 +44,8 @@
 
 .item h3, .item h4 {
   display: block;
+  width: 100%;
+  text-align: left;
 }
 
 .item img {
@@ -77,4 +79,28 @@
   height: 100vh;
   background: #0f0f0f;
   transform-origin: bottom;
+}
+
+@media (max-width: 768px) {
+  #root {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .item h4 {
+    display: block;
+    outline: 2px solid #0f0f0f;
+    outline-offset: 5px;
+  }
+
+  /* .item h2 {
+    border: 1px solid red;
+    text-align: center;
+  }
+
+  .item {
+    border: 1px solid blue;
+  } */
 }
