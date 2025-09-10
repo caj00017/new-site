@@ -4,7 +4,29 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  position: relative; /* for back arrow positioning */
 }
+
+/* back arrow */
+.back-home {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  color: #0f0f0f;                 /* tweak to match your theme */
+  border: 2px solid currentColor;
+  background: transparent;
+  text-decoration: none;
+  transition: transform .15s ease, background .15s ease, opacity .15s ease;
+}
+.back-home:hover { background: rgba(0,0,0,.06); transform: translateX(-2px); }
+.back-home:focus-visible { outline: 3px solid #4da3ff; outline-offset: 2px; }
 
 /* Body copy left-align is nice */
 p { text-align: left; }
@@ -73,6 +95,22 @@ p { text-align: left; }
   color: gray;
 }
 
+/* full-screen overlays the transition component animates */
+.slide-in,
+.slide-out {
+  position: fixed;
+  inset: 0;              /* top:0 right:0 bottom:0 left:0 */
+  width: 100%;
+  height: 100%;
+  z-index: 9999;         /* above page content */
+  background: #0f0f0f;   /* or your theme color */
+  pointer-events: none;  /* don't block clicks */
+}
+
+.slide-in  { transform-origin: top; }
+.slide-out { transform-origin: bottom;    }
+
+
 /* Mobile tweaks */
 @media (max-width: 768px) {
   #root { max-width: 90%; }
@@ -86,4 +124,6 @@ p { text-align: left; }
   .title-block { align-items: center; }
   p, .section { text-align: left; } /* keep body readable */
   #taskGardenScreenshot { max-width: 100%; }
+
+  .back-home { top: .75rem; right: .75rem; }
 }

@@ -1,5 +1,4 @@
 import './App.css'
-import TypeIt from 'typeit'
 import { useEffect } from 'react';
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from 'framer-motion';
@@ -16,13 +15,6 @@ function App() {
 
   const location = useLocation();
 
-  useEffect(() => {
-    new TypeIt("#title", {
-      speed: 25,
-      waitUntilVisible: true,
-    }).go();
-  }, []);
-
   return (
     <>
       <AnimatePresence mode="wait">
@@ -35,7 +27,7 @@ function App() {
       </AnimatePresence>
       {/* <Navbar /> */}
       <p className='footer'>
-        Christopher Jones | v. September 2025
+        Christopher Jones | v. September 2025 | References available upon request
       </p>
     </>
   )

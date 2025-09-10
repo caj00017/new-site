@@ -2,6 +2,9 @@
 import '../App.css';
 import Avatar from 'react-avatar';
 import transition from '../transition';
+import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import TypeIt from 'typeit'
 
 function Section({ title, subtitle, children }) {
   return (
@@ -14,6 +17,14 @@ function Section({ title, subtitle, children }) {
 }
 
 function Home() {
+
+  useEffect(() => {
+    new TypeIt("#title", {
+      speed: 25,
+      waitUntilVisible: true,
+    }).go();
+  }, []);
+
   return (
     <>
       {/* HERO */}
@@ -117,7 +128,7 @@ function Home() {
         <h4>May 2023 – Aug 2023, May 2024 – Aug 2024</h4>
         {/* (Keeping your narrative content intact) */}
         <p>
-          As of July 2024, my only relevant work experience has been with the NASA IV&amp;V Education Resource Center…
+          This summer and last, I had the privilege to work with the NASA IV&amp;V Education Resource Center…<Link to="/work">read more</Link>
         </p>
         {/* ...keep the rest of your paragraphs as-is */}
       </Section>
