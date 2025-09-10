@@ -1,3 +1,4 @@
+/* Keep your existing #root */
 #root {
   max-width: 70%;
   margin: 0 auto;
@@ -5,126 +6,84 @@
   text-align: center;
 }
 
-p {
-  text-align: left;
-}
+/* Body copy left-align is nice */
+p { text-align: left; }
 
-/* Flex container with responsive width */
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  justify-self: center;
+/* ===== HERO (title + avatar) ===== */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr auto;
   align-items: center;
-  max-width: 100%;
-  /* max-width: 60em; */
-  /* border: 3px solid blue; */
+  gap: 2rem;
+  margin-bottom: 2rem;
 }
 
 .title-block {
   display: flex;
-  flex-direction: column; /* stack h1 and h2 vertically */
-  align-items: flex-start; /* keep them left-aligned */
+  flex-direction: column;
+  align-items: flex-start; /* left-align headings */
 }
 
+.title-block h1 {
+  margin: 0 0 0.25rem 0;
+}
+
+.title-block h2 {
+  margin: 2.0rem 0 0 0;
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+/* Large intro paragraph under the hero */
+.lede {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin: 0 0 2.25rem 0;
+}
+
+/* Sections */
+.section {
+  margin: 2.5rem 0;
+  text-align: left;
+}
+
+.section h2 {
+  margin: 0 0 0.25rem 0;
+}
+
+.section h4 {
+  margin: 0 0 1rem 0;
+  font-weight: 500;
+  opacity: 0.85;
+}
+
+/* Image */
 #taskGardenScreenshot {
-  max-width: 50%;
-  margin: 2em;
-  border: 2px solid #0f0f0f;
-  outline: 2px solid #0f0f0f;
-  outline-offset: 5px;
+  display: block;                 /* make it a block so margins apply */
+  width: min(900px, 50vw);        /* ~60% of viewport, capped at 900px */
+  max-width: 100%;                /* don’t overflow on small screens */
+  margin: 2rem auto;              /* <- centers it */
 }
 
-/* Responsive Navbar */
-#Navbar {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  justify-self: center;
-  align-items: center;
-  max-width: 100%;
-  /* max-width: 75em; */
-  /* border: 3px solid blue; */
-}
-
-/* Ensure items wrap properly */
-.item {
-  display: flex;
-  flex-wrap: wrap;
-  /* border: 3px solid red; */
-  padding: 1rem;
-  max-width: 100%;
-}
-
-.item p {
-  text-align: left;
-}
-
-.item h3, .item h4 {
-  display: block;
-  width: 100%;
-  text-align: left;
-}
-
-.item img {
-  max-width: 80%;
-  margin: 2em;
-}
-
-.item ul {
-  text-align: left;
-}
-
-.subtitle {
+/* Footer */
+.footer, .subtitle {
+  font-size: 0.9rem;
   text-align: center;
-}
-
-.slide-in {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background: #0f0f0f;
-  transform-origin: top;
-}
-
-.slide-out {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background: #0f0f0f;
-  transform-origin: bottom;
-}
-
-.footer {
-  text-align: center;
-  margin-top: 2rem;
+  margin: 0 0 2rem 0;
   color: gray;
 }
 
+/* Mobile tweaks */
 @media (max-width: 768px) {
-  #root {
-    max-width: 90%;
-    margin: 0 auto;
-    padding: 2rem;
+  #root { max-width: 90%; }
+
+  .hero {
+    grid-template-columns: 1fr;   /* stack title + avatar */
+    justify-items: center;        /* center avatar when stacked */
     text-align: center;
   }
 
-  .item h4 {
-    display: block;
-    outline: 2px solid #0f0f0f;
-    outline-offset: 5px;
-  }
-
-  /* .item h2 {
-    border: 1px solid red;
-    text-align: center;
-  }
-
-  .item {
-    border: 1px solid blue;
-  } */
+  .title-block { align-items: center; }
+  p, .section { text-align: left; } /* keep body readable */
+  #taskGardenScreenshot { max-width: 100%; }
 }

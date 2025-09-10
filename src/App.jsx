@@ -35,7 +35,7 @@ function App() {
       </AnimatePresence>
       {/* <Navbar /> */}
       <p className='footer'>
-        Christopher Jones | v. February 2025
+        Christopher Jones | v. September 2025
       </p>
     </>
   )
