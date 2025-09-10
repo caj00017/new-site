@@ -1,8 +1,12 @@
 #root {
-  max-width: 80%;
+  max-width: 70%;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+}
+
+p {
+  text-align: left;
 }
 
 /* Flex container with responsive width */
@@ -15,6 +19,20 @@
   max-width: 100%;
   /* max-width: 60em; */
   /* border: 3px solid blue; */
+}
+
+.title-block {
+  display: flex;
+  flex-direction: column; /* stack h1 and h2 vertically */
+  align-items: flex-start; /* keep them left-aligned */
+}
+
+#taskGardenScreenshot {
+  max-width: 50%;
+  margin: 2em;
+  border: 2px solid #0f0f0f;
+  outline: 2px solid #0f0f0f;
+  outline-offset: 5px;
 }
 
 /* Responsive Navbar */
@@ -79,6 +97,12 @@
   height: 100vh;
   background: #0f0f0f;
   transform-origin: bottom;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 2rem;
+  color: gray;
 }
 
 @media (max-width: 768px) {

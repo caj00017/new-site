@@ -33,7 +33,7 @@ function App() {
           <Route path="/work" element={<Work />} />
         </Routes>
       </AnimatePresence>
-      <Navbar />
+      {/* <Navbar /> */}
       <p className='footer'>
         Christopher Jones | v. February 2025
       </p>
