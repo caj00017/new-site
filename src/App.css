@@ -82,9 +82,61 @@ p { text-align: left; }
 /* Image */
 #taskGardenScreenshot {
   display: block;                 /* make it a block so margins apply */
-  width: min(900px, 50vw);        /* ~60% of viewport, capped at 900px */
+  width: min(900px, 50vw);        /* ~50% of viewport, capped at 900px */
   max-width: 100%;                /* don’t overflow on small screens */
   margin: 2rem auto;              /* <- centers it */
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+#mergeConflictScreenshot {
+  display: block;                 /* make it a block so margins apply */
+  width: 40vw;        /* ~50% of viewport, capped at 900px */
+  max-width: 100%;                /* don’t overflow on small screens */
+  margin: 2rem auto;              /* <- centers it */
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Floating video */
+.video-container {
+  float: right;               /* float video to the right */
+  margin: 0 0 1rem 1.5rem;    /* space around video */
+  max-width: 420px;           /* adjust for bigger video */
+  text-align: center;         /* center caption */
+}
+
+.video-container iframe {
+  width: 100%;                /* take full width of container */
+  aspect-ratio: 16 / 9;       /* keeps video proportional */
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+  display: block;
+}
+
+.video-container figcaption {
+  font-size: 0.9rem;
+  color: gray;
+  margin-top: 0.5rem;
+}
+
+.float-media {
+  float: right;               /* or left, depending on placement */
+  margin: 0 0 1rem 1.5rem;    /* spacing around */
+  max-width: 420px;           /* same width as video */
+  text-align: center;         /* caption centered */
+}
+
+.float-media img {
+  width: 100%;                /* scales to container width */
+  height: auto;               /* maintains proportions */
+  border-radius: 10px;        /* matches video styling */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+  display: block;
+}
+
+.float-media figcaption {
+  font-size: 0.9rem;
+  color: gray;
+  margin-top: 0.5rem;
 }
 
 /* Footer */

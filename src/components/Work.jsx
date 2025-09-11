@@ -41,6 +41,34 @@ function Work() {
         </div>
       </header>
 
+      {/* Tutoring Section */}
+      <Section 
+        title="Tutor, LCSEE Learning & Mentoring Center"
+        subtitle="West Virginia University · Morgantown, WV · Sept 2024 - Present" 
+      >
+        <p>
+          As a tutor at the LCSEE Learning and Mentoring Center, my primary duty is to offer free 
+          help with coursework to students in Computer Science, Cybersecurity, and Computer Engineering.
+        </p>
+        <p>
+          The WVU courses I am qualified to tutor for (passed with an A) are as follows:
+          <ul>
+            <li>CS 110 Introduction to Computer Science</li>
+            <li>CS 111 Introduction to Data Structures</li>
+            <li>CS 210 File and Data Structures</li>
+            <li>CS 220 Discrete Mathematics</li>
+            <li>CS 310 Principles of Programming Languages</li>
+            <li>CS 320 Analysis of Algorithms</li>
+            <li>CS 330/L Intro to Software Engineering/Lab</li>
+            <li>CS 350 Computer System Concepts.</li>
+            <li>CPE 271/L Intro to Digital Logic Design/Lab</li>
+            <li>CS 450 Operating System Structure</li>
+            <li>CYBE 366 Secure Software Development</li>
+          </ul>
+        </p>
+      </Section>
+
+      {/* NASA Section */}
       <Section
         title="Robotics Instructor Intern"
         subtitle="NASA Katherine Johnson IV&V Education Resource Center · Fairmont, WV · May 2023 – Aug 2023, May 2024 – Aug 2024"
@@ -51,6 +79,10 @@ function Work() {
           My experiences with the ERC are detailed below. This essay was written on July 31st, 
           2023, on the final day of my first internship with the NASA ERC team.
         </p>
+        <figure className="video-container">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/QQJnMR5dfwg?si=qsE-n_aSL2JtLxV2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <figcaption>The Robotic Freeze Tag Activity</figcaption>
+        </figure>
         <p>
           Over the course of the past ten weeks, I’ve had the pleasure of working with the West Virginia
           Robotics Alliance, founded by the Education Resource Center (ERC) of the NASA Katherine Johnson 
@@ -79,6 +111,10 @@ function Work() {
           taught, and facilitated myself–the Freeze Tag game, which involved students dividing into teams of three
           and attempting to “freeze” the other teams’ robots by touching the bumper sensor on the back.
         </p>
+        <figure className="float-media">
+          <img src="/IMG_9778_Original.png" alt="field" />
+          <figcaption>Vex IQ Full Volume Field</figcaption>
+        </figure>
         <p>
           It was wonderful helping the students with assembly and programming and watching them get excited and have
           fun playing the game. At the end of each camp, we helped students clean up and fully organize their robot 
@@ -98,6 +134,7 @@ function Work() {
           I did. Working with the NASA ERC and the WV Robotics Alliance really helped me find a way to combine education
           with my ongoing passion for technology into something that could very well shape my career in the future.
         </p>
+        <Link to="/">&lt;&lt; Back home</Link>
       </Section>
     </>
   );
