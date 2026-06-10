@@ -5,7 +5,7 @@
 export const profile = {
   name: 'Christopher Jones',
   title: 'Computer Science & Cybersecurity',
-  tagline: "Honors student at West Virginia University (Class of '26) building security tooling, distributed systems, and the occasional virtual plant.",
+  tagline: "Honors student at West Virginia University (Class of '26), focused on security tooling, distributed systems, and low-level software.",
   avatar: '/IMG_7895.jpg',
   links: {
     github: 'https://github.com/caj00017',
@@ -74,26 +74,6 @@ export const projects = [
     credit: 'TaskGarden © 2024 Christopher Jones, Elijah Hall, Daniel Campa, Gillian Breeden, Sandrik Tabidze. Best experienced in a 1920×1080 window.',
   },
   {
-    slug: 'mergeconflict',
-    name: 'MergeConflict (MPX)',
-    featured: false,
-    tagline: 'A small operating system written from scratch',
-    meta: 'CS 450 team project · Fall 2024',
-    status: 'Source available',
-    summary:
-      'A working multiprogramming executive: a small operating system written in C and x86 assembly and built up over a semester with a four-person team, tested under QEMU. It supports process creation and scheduling, memory allocation, an interactive command handler, and device I/O. The most demanding and most rewarding project I have built, involving low-level debugging, careful teamwork, and the payoff of watching a real OS boot and run.',
-    highlights: [
-      'Contributed across the kernel: process control, memory management, and the command handler.',
-      'Practiced disciplined low-level debugging against a QEMU-emulated target.',
-    ],
-    tech: ['C', 'x86 Assembly', 'QEMU'],
-    image: '/MergeConflict-1.png',
-    links: [
-      { label: 'Release 6.0 on GitHub', href: 'https://github.com/WVU-CS450/MergeConflict/releases/tag/R6', primary: true },
-    ],
-    credit: 'MergeConflict © 2024 Christopher Jones, Evan Humphrey, Tanner Forbes, Izaak Whetsell.',
-  },
-  {
     slug: 'genai-research',
     name: 'Generative AI in Programming Work',
     featured: false,
@@ -110,6 +90,27 @@ export const projects = [
     links: [
       { label: 'Read the report', href: 'https://docs.google.com/document/d/16r7Xpsy2Y9nXnA7KpYg6BSHmOL50XLau0qD36neGq28/edit?tab=t.0', primary: true },
     ],
+  },
+  {
+    slug: 'mergeconflict',
+    name: 'MergeConflict (MPX)',
+    featured: false,
+    tagline: 'A small operating system written from scratch',
+    meta: 'CS 450 team project · Fall 2024',
+    status: 'Source available',
+    summary:
+      'A working multiprogramming executive: a small operating system written in C and x86 assembly and built up over a semester with a four-person team, tested under QEMU. It supports process creation and scheduling, memory allocation, an interactive command handler, and device I/O. The most demanding and most rewarding project I have built, involving low-level debugging, careful teamwork, and the payoff of watching a real OS boot and run.',
+    highlights: [
+      'Built without the C standard library, so many core routines were implemented from scratch. I wrote the itoa and intToBCD conversions myself.',
+      'Contributed across the kernel: process control, memory management, and the command handler.',
+      'Practiced disciplined low-level debugging against a QEMU-emulated target.',
+    ],
+    tech: ['C', 'x86 Assembly', 'QEMU'],
+    image: '/MergeConflict-1.png',
+    links: [
+      { label: 'Release 6.0 on GitHub', href: 'https://github.com/WVU-CS450/MergeConflict/releases/tag/R6', primary: true },
+    ],
+    credit: 'MergeConflict © 2024 Christopher Jones, Evan Humphrey, Tanner Forbes, Izaak Whetsell.',
   },
 ];
 
