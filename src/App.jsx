@@ -1,15 +1,11 @@
 import './App.css'
-import { useEffect } from 'react';
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from 'framer-motion';
 
-import Navbar from './components/Navbar';
 import About from './components/About';
 import Projects from './components/Projects';
 import Work from './components/Work';
 import Home from './components/Home';
-
-import transition from './transition';
 
 function App() {
 

@@ -1,5 +1,6 @@
 // src/components/Work.jsx
 import { useEffect } from "react";
+import PropTypes from "prop-types";
 import transition from "../transition";
 import TypeIt from 'typeit'
 import { Link } from "react-router-dom";
@@ -13,6 +14,12 @@ function Section({ title, subtitle, children }) {
     </section>
   );
 }
+
+Section.propTypes = {
+  title: PropTypes.string,
+  subtitle: PropTypes.string,
+  children: PropTypes.node,
+};
 
 function Work() {
   useEffect(() => {
@@ -80,7 +87,7 @@ function Work() {
           2023, on the final day of my first internship with the NASA ERC team.
         </p>
         <figure className="video-container">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/QQJnMR5dfwg?si=qsE-n_aSL2JtLxV2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/QQJnMR5dfwg?si=qsE-n_aSL2JtLxV2" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
           <figcaption>The Robotic Freeze Tag Activity</figcaption>
         </figure>
         <p>

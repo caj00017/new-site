@@ -1,7 +1,6 @@
 
 import TypeIt from 'typeit'
 import { useEffect } from 'react';
-import Navbar from './Navbar';
 
 import transition from '../transition';
 
@@ -24,7 +23,7 @@ function About() {
           <div className="item">
             <ul>
               <li>This page is a work in progress.</li>
-              <li>Come back later to see what's up!</li>
+              <li>Come back later to see what&apos;s up!</li>
             </ul>
           </div>
           <div className='item'>

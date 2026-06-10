@@ -1,6 +1,7 @@
 // src/components/Home.jsx
 import '../App.css';
 import Avatar from 'react-avatar';
+import PropTypes from 'prop-types';
 import transition from '../transition';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
@@ -15,6 +16,12 @@ function Section({ title, subtitle, children }) {
     </section>
   );
 }
+
+Section.propTypes = {
+  title: PropTypes.string,
+  subtitle: PropTypes.string,
+  children: PropTypes.node,
+};
 
 function Home() {
 
@@ -46,8 +53,8 @@ function Home() {
 
       {/* INTRO */}
       <p className="lede">
-        Hi! My name is Chris Jones. I'm creating this website to serve as an interactive
-        portfolio/resume detailing my work/study experience and other things I've worked on.
+        Hi! My name is Chris Jones. I&apos;m creating this website to serve as an interactive
+        portfolio/resume detailing my work/study experience and other things I&apos;ve worked on.
         On this page, you can find a bit more detail about myself and the kind of
         stuff I like to do.
       </p>
@@ -58,7 +65,7 @@ function Home() {
           Motivated third-year Computer Science and Cybersecurity student with a strong academic
           background and hands-on experience in robotics instruction, programming, and AI research. 
           Eager to apply problem-solving and technical skills in innovative software development and 
-          cybersecurity roles. On this site, I've included details about my work and study experience 
+          cybersecurity roles. On this site, I&apos;ve included details about my work and study experience
           related to CS. My updated resume is also available{" "}
           <a
             href="https://docs.google.com/document/d/10JcE1dX6knykYlBcg6qi-wDnr8QXoQ0rM_FexEAuVbw/edit?tab=t.0"
@@ -124,7 +131,7 @@ function Home() {
         </p>
         <ul>
           <li>
-            Conducted an in-depth analysis of generative AI's impact on the programming field,
+            Conducted an in-depth analysis of generative AI&apos;s impact on the programming field,
             highlighting productivity enhancements for experienced developers and risks of
             over-reliance among novice programmers.
           </li>
@@ -169,7 +176,7 @@ function Home() {
         <p>
 
         <p>
-          <b>"MergeConflict" MPX, Fall 2024</b> — A rudimentary operating system created for CS 450: Operating System Structure where users
+          <b>&quot;MergeConflict&quot; MPX, Fall 2024</b> — A rudimentary operating system created for CS 450: Operating System Structure where users
           can create and execute test processes, allocate memory, and perform various other basic OS tasks. 
           Programmed in C and Assembly and tested with QEMU, created Fall 2024 over the course of the semester. 
           This was my most engaging project by far and although it was very difficult at times, it was satisfying to watch it all come
