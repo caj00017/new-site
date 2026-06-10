@@ -1,41 +1,84 @@
-
-import TypeIt from 'typeit'
+// src/components/About.jsx
 import { useEffect } from 'react';
+import Avatar from 'react-avatar';
 
 import transition from '../transition';
+import ContactLinks from './ContactLinks';
+import { profile, education, skills } from '../data/content';
 
 function About() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
-    useEffect(() => {
-      window.scrollTo(0, 0);
-      new TypeIt("#title", {
-        speed: 25,
-        waitUntilVisible: true,
-      }).go();
-    }, []);
-  
-    return (
-      <>
-        <div className="container" id='page'>
-          <div className="item">
-            <h1 id="title">About Me</h1>
-          </div>
-          <div className="item">
-            <ul>
-              <li>This page is a work in progress.</li>
-              <li>Come back later to see what&apos;s up!</li>
-            </ul>
-          </div>
-          <div className='item'>
-            <p>
-              I am a junior in Computer Science and Cybersecurity at West Virginia University.<br />
-              Included on this site are pages detailing my work and study experience related to CS,
-              and I have linked the <a href="https://github.com/caj00017/new-site" target="_blank">GitHub</a> repository for this website as well as my <a href="https://docs.google.com/document/d/10JcE1dX6knykYlBcg6qi-wDnr8QXoQ0rM_FexEAuVbw/edit?tab=t.0" target="_blank">resume</a>.<br />
-            </p>
-          </div>
+  return (
+    <main className="page">
+      <header className="page-head">
+        <h1>About</h1>
+        <p className="page-sub">A bit more about who I am and what I&apos;m after.</p>
+      </header>
+
+      <section className="about-intro">
+        <Avatar name="Chris Jones" size="140" round src={profile.avatar} alt="Chris Jones headshot" />
+        <div>
+          <p>
+            I&apos;m a third-year Honors student at West Virginia University pursuing dual degrees in
+            Computer Science and Cybersecurity, graduating in December 2026. I&apos;m happiest somewhere
+            near the metal (networking, operating systems, distributed infrastructure), and I learn
+            best by building tools that force me to understand how things actually work underneath.
+          </p>
+          <p>
+            Right now that means writing a network mapper in Go to learn the language and the protocols
+            firsthand, and helping ship a distributed machine-learning platform as my senior capstone.
+            Alongside that I tutor CS, Cybersecurity, and Computer Engineering students, which keeps my
+            own fundamentals sharp. I&apos;m looking for software engineering and cybersecurity roles
+            where I can keep doing exactly this.
+          </p>
+          <ContactLinks />
         </div>
-      </>
-    )
-  }
-  
-  export default transition(About)
+      </section>
+
+      <section className="block">
+        <h2 className="section-label">Education</h2>
+        <div className="edu-card">
+          <div className="role-head">
+            <h3>{education.school}</h3>
+            <span className="role-dates">{education.dates}</span>
+          </div>
+          <p className="role-org">{education.degree}</p>
+          <p className="edu-stats">
+            <span>
+              <strong>GPA</strong> {education.gpa}
+            </span>
+            <span>{education.honors}</span>
+            <span>{education.location}</span>
+          </p>
+          <p className="role-note">Relevant coursework</p>
+          <ul className="tech-list">
+            {education.coursework.map((c) => (
+              <li key={c}>{c}</li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="block">
+        <h2 className="section-label">Technical skills</h2>
+        <div className="skills-grid">
+          {skills.map((s) => (
+            <div className="skill-group" key={s.group}>
+              <h3>{s.group}</h3>
+              <ul className="tech-list">
+                {s.items.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
+    </main>
+  );
+}
+
+export default transition(About);

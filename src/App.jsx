@@ -2,29 +2,34 @@ import './App.css'
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from 'framer-motion';
 
+import Nav from './components/Nav';
 import About from './components/About';
 import Projects from './components/Projects';
-import Work from './components/Work';
+import Experience from './components/Experience';
 import Home from './components/Home';
 
 function App() {
-
   const location = useLocation();
 
   return (
     <>
-      <AnimatePresence mode="wait">
-        <Routes location={location} key={location.pathname}>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/work" element={<Work />} />
-        </Routes>
-      </AnimatePresence>
-      {/* <Navbar /> */}
-      <p className='footer'>
-        Christopher Jones | v. September 2025 | References available upon request
-      </p>
+      <Nav />
+      <div className="shell">
+        <AnimatePresence mode="wait">
+          <Routes location={location} key={location.pathname}>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/experience" element={<Experience />} />
+            {/* legacy path kept so old links don't 404 */}
+            <Route path="/work" element={<Experience />} />
+          </Routes>
+        </AnimatePresence>
+
+        <footer className="footer">
+          Christopher Jones · {new Date().getFullYear()} · References available upon request
+        </footer>
+      </div>
     </>
   )
 }
