@@ -164,6 +164,44 @@ export const education = {
   ],
 };
 
+export const homelab = {
+  tagline: 'Two HP EliteDesks and a custom desktop — my sandbox for self-hosting, networking, and learning how infrastructure actually works.',
+  boxes: [
+    {
+      hostname: 'elitedesk-1',
+      role: 'Development & Hermes Agent host',
+      specs: 'HP EliteDesk · Debian',
+      ip: 'This machine',
+      services: ['Hermes Agent (personal AI assistant)', 'Development environment', 'Telegram bot host'],
+    },
+    {
+      hostname: 'elitedesk-2',
+      role: 'Game server',
+      specs: 'HP EliteDesk · Debian · 2× RAM and CPU of elitedesk-1',
+      ip: '10.0.0.228',
+      services: ['Minecraft server'],
+    },
+    {
+      hostname: 'main-rig',
+      role: 'Daily driver',
+      specs: 'Custom build · Windows 11 + CachyOS (dual boot)',
+      ip: '—',
+      services: ['Gaming', 'General productivity', 'Heavy development work'],
+    },
+  ],
+  why: [
+    {
+      heading: 'TODO: What you\'re learning',
+      body: 'TODO — Chris, write a paragraph here about what self-hosting teaches you, why you built this instead of using cloud services, and what skills it builds. Think: \"I built my homelab because...\"',
+    },
+    {
+      heading: 'TODO: Future plans',
+      body: 'TODO — What services do you want to add? Pi-hole? NAS? Reverse proxy? Kubernetes cluster? Custom router/firewall?',
+    },
+  ],
+  tech: ['Debian', 'Linux', 'Docker', 'Networking', 'Self-hosting', 'Minecraft server admin'],
+};
+
 export const skills = [
   { group: 'Languages', items: ['Java', 'C / C++', 'Go', 'JavaScript', 'HTML / CSS', 'x86 Assembly'] },
   { group: 'Frameworks & tools', items: ['React', 'Vite', '.NET 8', 'Node.js', 'Git / GitHub', 'Docker', 'Linux'] },
