@@ -246,7 +246,7 @@ export const homelab = {
         { k: 'OS', v: 'Debian 13 (trixie)' },
         { k: 'Address', v: '10.0.0.223' },
       ],
-      services: ['Hermes Agent (personal AI assistant)', 'Telegram bot host', 'Pi-hole (planned)', 'Autonomous workflow host', 'Light development'],
+      services: ['Pi-hole (planned)', 'Autonomous workflow host', 'Light development'],
       fastfetch: '/elitedesk-2-fastfetch.png',
     },
   ],
