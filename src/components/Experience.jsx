@@ -34,6 +34,14 @@ function Experience() {
             <li key={c}>{c}</li>
           ))}
         </ul>
+        <details className="course-more">
+          <summary>Show {tutor.moreCourses.length} more courses</summary>
+          <ul className="course-grid course-grid--more">
+            {tutor.moreCourses.map((c) => (
+              <li key={c}>{c}</li>
+            ))}
+          </ul>
+        </details>
       </section>
 
       {/* NASA */}
