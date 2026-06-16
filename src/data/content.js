@@ -53,42 +53,23 @@ export const projects = [
     tech: ['React', 'Vite', '.NET 8', 'Docker Swarm', 'Apache Spark', 'Apache Hadoop', 'MySQL', 'OAuth 2.0'],
   },
   {
-    slug: 'taskgarden',
-    name: 'TaskGarden',
-    featured: false,
-    tagline: 'A gamified task manager that grows a virtual plant',
-    meta: 'CS 230 team project · Spring 2024',
-    status: 'Live demo',
+    slug: 'homelab',
+    name: 'Homelab',
+    featured: true,
+    tagline: 'Always-on Linux infrastructure and networking sandbox',
+    meta: 'Personal infrastructure · 2025 – present',
+    status: 'Always on',
     summary:
-      'A task-management web app where completing tasks earns points that grow a virtual plant, a playful take on productivity. Built with a five-person team using React on the front end and Google Firestore on the back end, deployed on Firebase Hosting. It was my first real web app and the project that turned a passing interest in software engineering into a focus I have carried ever since.',
+      'Two HP EliteDesks running Debian, configured and operated as real Linux infrastructure rather than a throwaway VM. lab01 runs a custom TCP server; lab02 hosts always-on services including a personal AI assistant and an autonomous workflow engine. Both machines serve as live scan targets for portmango, giving me a controlled environment with real hosts, real traffic, and real consequences when something breaks.',
     highlights: [
-      'Implemented the React front end and integrated it with a Firestore data model.',
-      'Shipped a working, hosted product over the course of a semester alongside teammates.',
+      'Configured and operate two always-on Debian servers from scratch: installation, networking, service management, and everything in between.',
+      'Runs a custom TCP server on the heavier box; the lighter one handles Pi-hole DNS and always-on service hosting.',
+      'Functions as a live networking sandbox for portmango: real ARP, TCP, and ICMP traffic across two physical machines with reproducible scan targets.',
+      'All services self-administered: no managed hosting, no support ticket when something breaks.',
     ],
-    tech: ['React', 'Firestore', 'Firebase Hosting'],
-    image: '/taskgarden-ss.png',
+    tech: ['Debian', 'Linux', 'TCP/IP', 'DNS', 'Docker', 'Networking', 'Self-hosting'],
     links: [
-      { label: 'Try the live app', href: 'https://taskgarden-8c627.web.app/', primary: true },
-      { label: 'Source on GitHub', href: 'https://github.com/WVU-CS230-2024-01-Group10/TaskGarden' },
-    ],
-    credit: 'TaskGarden © 2024 Christopher Jones, Elijah Hall, Daniel Campa, Gillian Breeden, Sandrik Tabidze. Best experienced in a 1920×1080 window.',
-  },
-  {
-    slug: 'genai-research',
-    name: 'Generative AI in Programming Work',
-    featured: false,
-    tagline: 'A research report on the benefits and drawbacks of generative AI',
-    meta: 'Research report · WVU · unpublished',
-    status: 'Available to read',
-    summary:
-      'An in-depth analysis of how generative AI is reshaping programming work, weighing real productivity gains for experienced developers against the risks of over-reliance for novice programmers. I synthesized scholarly research with interviews of faculty experts and laid out best practices for using AI responsibly in professional software development.',
-    highlights: [
-      'Synthesized academic sources and faculty interviews into a single argument.',
-      'Examined the ethical and practical implications of AI in the software workplace.',
-    ],
-    tech: ['Technical writing', 'Research'],
-    links: [
-      { label: 'Read the report', href: 'https://docs.google.com/document/d/16r7Xpsy2Y9nXnA7KpYg6BSHmOL50XLau0qD36neGq28/edit?tab=t.0', primary: true },
+      { label: 'See the full setup', href: '/homelab', primary: true },
     ],
   },
   {
@@ -111,6 +92,45 @@ export const projects = [
       { label: 'Release 6.0 on GitHub', href: 'https://github.com/WVU-CS450/MergeConflict/releases/tag/R6', primary: true },
     ],
     credit: 'MergeConflict © 2024 Christopher Jones, Evan Humphrey, Tanner Forbes, Izaak Whetsell.',
+  },
+  {
+    slug: 'genai-research',
+    name: 'Generative AI in Programming Work',
+    featured: false,
+    tagline: 'A research report on the benefits and drawbacks of generative AI',
+    meta: 'Research report · WVU · unpublished',
+    status: 'Available to read',
+    summary:
+      'An in-depth analysis of how generative AI is reshaping programming work, weighing real productivity gains for experienced developers against the risks of over-reliance for novice programmers. I synthesized scholarly research with interviews of faculty experts and laid out best practices for using AI responsibly in professional software development.',
+    highlights: [
+      'Synthesized academic sources and faculty interviews into a single argument.',
+      'Examined the ethical and practical implications of AI in the software workplace.',
+    ],
+    tech: ['Technical writing', 'Research'],
+    links: [
+      { label: 'Read the report', href: 'https://docs.google.com/document/d/16r7Xpsy2Y9nXnA7KpYg6BSHmOL50XLau0qD36neGq28/edit?tab=t.0', primary: true },
+    ],
+  },
+  {
+    slug: 'taskgarden',
+    name: 'TaskGarden',
+    featured: false,
+    tagline: 'A gamified task manager that grows a virtual plant',
+    meta: 'CS 230 team project · Spring 2024',
+    status: 'Live demo',
+    summary:
+      'A task-management web app where completing tasks earns points that grow a virtual plant, a playful take on productivity. Built with a five-person team using React on the front end and Google Firestore on the back end, deployed on Firebase Hosting. It was my first real web app and the project that turned a passing interest in software engineering into a focus I have carried ever since.',
+    highlights: [
+      'Implemented the React front end and integrated it with a Firestore data model.',
+      'Shipped a working, hosted product over the course of a semester alongside teammates.',
+    ],
+    tech: ['React', 'Firestore', 'Firebase Hosting'],
+    image: '/taskgarden-ss.png',
+    links: [
+      { label: 'Try the live app', href: 'https://taskgarden-8c627.web.app/', primary: true },
+      { label: 'Source on GitHub', href: 'https://github.com/WVU-CS230-2024-01-Group10/TaskGarden' },
+    ],
+    credit: 'TaskGarden © 2024 Christopher Jones, Elijah Hall, Daniel Campa, Gillian Breeden, Sandrik Tabidze. Best experienced in a 1920×1080 window.',
   },
 ];
 
@@ -164,9 +184,90 @@ export const education = {
   ],
 };
 
+export const homelab = {
+  tagline: 'Two HP EliteDesks and a custom desktop, serving as a hands-on networking sandbox for TCP/IP work, self-hosted services, and learning how infrastructure actually behaves.',
+  // Quick-glance stats shown as a strip under the page header.
+  stats: [
+    { value: '3', label: 'machines' },
+    { value: '2', label: 'always-on servers' },
+    { value: '3', label: 'operating systems' },
+  ],
+  // A tiled fastfetch of the whole lab, used as a banner under the stats.
+  hero: {
+    src: '/homelab.png',
+    caption: 'fastfetch: the whole lab in one view',
+  },
+  // Each box renders a "rig" card. `fastfetch` is a system-info screenshot that
+  // falls back to a labeled placeholder until the file exists in /public.
+  // Specs below are transcribed from the fastfetch screenshots.
+  boxes: [
+    {
+      hostname: 'cjones-desktop',
+      role: 'Daily driver & command center',
+      status: 'workstation',
+      statusLabel: 'Workstation',
+      blurb: 'My custom-built desktop for gaming, heavy development, and dual-booting. I landed on CachyOS for its performance tuning and Windows for compatibility; I\'ve also run Fedora and Ubuntu on this machine over the years. The command center for the rest of the lab.',
+      specs: [
+        { k: 'CPU', v: 'AMD Ryzen 9 5900X · 24 threads' },
+        { k: 'GPU', v: 'AMD Radeon RX 6700 XT' },
+        { k: 'Memory', v: '32 GiB' },
+        { k: 'OS', v: 'Windows 11 + CachyOS (dual boot)' },
+        { k: 'Address', v: '10.0.0.119' },
+      ],
+      services: ['Heavy development work', 'Gaming', 'General productivity'],
+      fastfetch: '/desktop-specs.png',
+    },
+    {
+      hostname: 'lab01',
+      role: 'TCP server & primary network services host',
+      status: 'online',
+      statusLabel: 'Always on',
+      blurb: 'The heavier of the two lab boxes, chosen for its CPU and RAM headroom. Runs the custom TCP server and doubles as a primary scan target for portmango network-mapping experiments.',
+      specs: [
+        { k: 'Model', v: 'HP EliteDesk 800 G3 DM' },
+        { k: 'CPU', v: 'Intel Core i7-6700K · 8 threads' },
+        { k: 'Memory', v: '32 GiB' },
+        { k: 'OS', v: 'Debian 13 (trixie)' },
+        { k: 'Address', v: '10.0.0.228' },
+      ],
+      services: ['Custom TCP server', 'CPU and RAM-heavy workloads'],
+      fastfetch: '/elitedesk-1-fastfetch.png',
+    },
+    {
+      hostname: 'lab02',
+      role: 'Light dev, sandboxing & always-on tools',
+      status: 'online',
+      statusLabel: 'Always on',
+      blurb: 'The lighter of the two lab boxes, home to Pi-hole, autonomous workflows, and anything that needs to stay on around the clock. Previously ran Ubuntu Server; I moved to Debian for stability and consistency across the lab. Also acts as a second scan target for portmango.',
+      specs: [
+        { k: 'Model', v: 'HP EliteDesk 800 G3 DM' },
+        { k: 'CPU', v: 'Intel Core i5-6500T · 4 threads' },
+        { k: 'Memory', v: '16 GiB' },
+        { k: 'OS', v: 'Debian 13 (trixie)' },
+        { k: 'Address', v: '10.0.0.223' },
+      ],
+      services: ['Hermes Agent (personal AI assistant)', 'Telegram bot host', 'Pi-hole (planned)', 'Autonomous workflow host', 'Light development'],
+      fastfetch: '/elitedesk-2-fastfetch.png',
+    },
+  ],
+  // DRAFT copy — Chris to rewrite in his own voice. Kept as clean prose so the
+  // page reads as finished even before it's edited.
+  why: [
+    {
+      heading: 'What it teaches me',
+      body: 'Cloud platforms hide the hard parts behind a friendly dashboard. Running my own hardware doesn\'t let me skip them. Every service on these machines is something I had to install, secure, and keep alive myself, so I\'ve had to actually understand Linux administration, networking, and the dozens of small failures that never make it into a tutorial. When something breaks there\'s no support ticket; I\'m the one who fixes it, and that feedback loop has taught me more about how real systems behave than any single class could. Part of that is trying operating systems until something clicks: Fedora and Ubuntu on the desktop before settling on CachyOS for its performance tuning, and Ubuntu Server on lab02 before consolidating on Debian for stability and lab cohesion.',
+    },
+    {
+      heading: 'Where it\'s going',
+      body: 'The lab is deliberately never finished. Next on the list is a reverse proxy so services are reachable by name instead of by IP address, Pi-hole for network-wide DNS and ad-blocking on lab02, and standing both boxes up as a proper networking sandbox: a controlled environment to develop and validate portmango against real hosts and live traffic. Further out I want to consolidate storage into a NAS for backups and media, and stand up a small container-orchestration setup to run services the way production teams actually do.',
+    },
+  ],
+  tech: ['Debian', 'Linux', 'Docker', 'TCP/IP', 'Networking', 'DNS', 'Self-hosting'],
+};
+
 export const skills = [
   { group: 'Languages', items: ['Java', 'C / C++', 'Go', 'JavaScript', 'HTML / CSS', 'x86 Assembly'] },
   { group: 'Frameworks & tools', items: ['React', 'Vite', '.NET 8', 'Node.js', 'Git / GitHub', 'Docker', 'Linux'] },
-  { group: 'Systems & data', items: ['Apache Spark', 'Apache Hadoop', 'Firestore', 'MySQL', 'Wireshark', 'QEMU'] },
+  { group: 'Systems & networking', items: ['TCP/IP', 'DNS', 'Wireshark', 'Apache Spark', 'Apache Hadoop', 'Firestore', 'MySQL', 'QEMU'] },
   { group: 'Spoken', items: ['English (native)', 'Spanish (intermediate)'] },
 ];

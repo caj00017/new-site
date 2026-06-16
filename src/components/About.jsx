@@ -22,13 +22,13 @@ function About() {
         <Avatar name="Chris Jones" size="140" round src={profile.avatar} alt="Chris Jones headshot" />
         <div>
           <p>
-            I&apos;m a third-year Honors student at West Virginia University pursuing dual degrees in
+            I&apos;m a fourth-year Honors student at West Virginia University pursuing dual degrees in
             Computer Science and Cybersecurity, graduating in December 2026. I&apos;m happiest somewhere
             near the metal (networking, operating systems, distributed infrastructure), and I learn
             best by building tools that force me to understand how things actually work underneath.
           </p>
           <p>
-            Right now that means writing a network mapper in Go to learn the language and the protocols
+            Right now I'm writing a network mapper in Go to learn the language and the protocols
             firsthand, and helping ship a distributed machine-learning platform as my senior capstone.
             Alongside that I tutor CS, Cybersecurity, and Computer Engineering students, which keeps my
             own fundamentals sharp. I&apos;m looking for software engineering and cybersecurity roles

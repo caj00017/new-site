@@ -40,6 +40,7 @@ function Projects() {
           ))}
         </div>
       </section>
+
     </main>
   );
 }

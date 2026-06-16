@@ -1,5 +1,6 @@
 // src/components/ProjectCard.jsx
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 function ProjectCard({ project, featured = false }) {
   const { name, tagline, meta, status, summary, highlights, tech, image, links, credit } = project;
@@ -44,17 +45,27 @@ function ProjectCard({ project, featured = false }) {
 
         {links?.length > 0 && (
           <div className="project-links">
-            {links.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={l.primary ? 'btn btn-primary' : 'btn btn-ghost'}
-              >
-                {l.label}
-              </a>
-            ))}
+            {links.map((l) =>
+              l.href.startsWith('/') ? (
+                <Link
+                  key={l.href}
+                  to={l.href}
+                  className={l.primary ? 'btn btn-primary' : 'btn btn-ghost'}
+                >
+                  {l.label}
+                </Link>
+              ) : (
+                <a
+                  key={l.href}
+                  href={l.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={l.primary ? 'btn btn-primary' : 'btn btn-ghost'}
+                >
+                  {l.label}
+                </a>
+              )
+            )}
           </div>
         )}
 
