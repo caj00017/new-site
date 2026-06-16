@@ -166,37 +166,80 @@ export const education = {
 
 export const homelab = {
   tagline: 'Two HP EliteDesks and a custom desktop — my sandbox for self-hosting, networking, and learning how infrastructure actually works.',
+  // Quick-glance stats shown as a strip under the page header.
+  stats: [
+    { value: '3', label: 'machines' },
+    { value: '2', label: 'always-on servers' },
+    { value: '3', label: 'operating systems' },
+  ],
+  // A tiled fastfetch of the whole lab, used as a banner under the stats.
+  hero: {
+    src: '/homelab.png',
+    caption: 'fastfetch — the whole lab in one view',
+  },
+  // Each box renders a "rig" card. `fastfetch` is a system-info screenshot that
+  // falls back to a labeled placeholder until the file exists in /public.
+  // Specs below are transcribed from the fastfetch screenshots.
   boxes: [
     {
       hostname: 'elitedesk-1',
-      role: 'Development & Hermes Agent host',
-      specs: 'HP EliteDesk · Debian',
-      ip: 'This machine',
+      role: 'Development & Hermes agent host',
+      status: 'online',
+      statusLabel: 'Always on',
+      blurb: 'The muscle of the lab and my always-on workhorse: where my personal services live and where I do most of my Linux development.',
+      specs: [
+        { k: 'Model', v: 'HP EliteDesk 800 G3 DM' },
+        { k: 'CPU', v: 'Intel Core i7-6700K · 8 threads' },
+        { k: 'Memory', v: '31 GiB' },
+        { k: 'OS', v: 'Debian 13 (trixie)' },
+        { k: 'Address', v: '10.0.0.228' },
+      ],
       services: ['Hermes Agent (personal AI assistant)', 'Development environment', 'Telegram bot host'],
+      fastfetch: '/elitedesk-1-fastfetch.png',
     },
     {
       hostname: 'elitedesk-2',
       role: 'Game server',
-      specs: 'HP EliteDesk · Debian · 2× RAM and CPU of elitedesk-1',
-      ip: '10.0.0.228',
+      status: 'online',
+      statusLabel: 'Always on',
+      blurb: 'The lighter of the two EliteDesks, dedicated to hosting game servers for friends.',
+      specs: [
+        { k: 'Model', v: 'HP EliteDesk 800 G3 DM' },
+        { k: 'CPU', v: 'Intel Core i5-6500T · 4 threads' },
+        { k: 'Memory', v: '16 GiB' },
+        { k: 'OS', v: 'Debian 13 (trixie)' },
+        { k: 'Address', v: '10.0.0.223' },
+      ],
       services: ['Minecraft server'],
+      fastfetch: '/elitedesk-2-fastfetch.png',
     },
     {
       hostname: 'main-rig',
-      role: 'Daily driver',
-      specs: 'Custom build · Windows 11 + CachyOS (dual boot)',
-      ip: '—',
-      services: ['Gaming', 'General productivity', 'Heavy development work'],
+      role: 'Daily driver & command center',
+      status: 'workstation',
+      statusLabel: 'Workstation',
+      blurb: 'My custom-built desktop and the command center for the lab — gaming, heavy development, and dual-booting Linux and Windows.',
+      specs: [
+        { k: 'CPU', v: 'AMD Ryzen 9 5900X · 24 threads' },
+        { k: 'GPU', v: 'AMD Radeon RX 6700 XT' },
+        { k: 'Memory', v: '31 GiB' },
+        { k: 'OS', v: 'Windows 11 + CachyOS (dual boot)' },
+        { k: 'Address', v: '10.0.0.119' },
+      ],
+      services: ['Heavy development work', 'Gaming', 'General productivity'],
+      fastfetch: '/desktop-specs.png',
     },
   ],
+  // DRAFT copy — Chris to rewrite in his own voice. Kept as clean prose so the
+  // page reads as finished even before it's edited.
   why: [
     {
-      heading: 'TODO: What you\'re learning',
-      body: 'TODO — Chris, write a paragraph here about what self-hosting teaches you, why you built this instead of using cloud services, and what skills it builds. Think: \"I built my homelab because...\"',
+      heading: 'What it teaches me',
+      body: 'Cloud platforms hide the hard parts behind a friendly dashboard. Running my own hardware doesn’t let me skip them. Every service on these machines is something I had to install, secure, and keep alive myself, so I’ve had to actually understand Linux administration, networking, and the dozens of small failures that never make it into a tutorial. When something breaks there’s no support ticket — I’m the one who fixes it, and that feedback loop has taught me more about how real systems behave than any single class could.',
     },
     {
-      heading: 'TODO: Future plans',
-      body: 'TODO — What services do you want to add? Pi-hole? NAS? Reverse proxy? Kubernetes cluster? Custom router/firewall?',
+      heading: 'Where it’s going',
+      body: 'The lab is deliberately never finished. Next on the list is a reverse proxy so services are reachable by name instead of by IP address, Pi-hole for network-wide DNS and ad-blocking, and proper monitoring with Grafana and Prometheus so I can see what each box is doing at a glance. Further out I want to consolidate storage into a NAS for backups and media, and stand up a small container-orchestration setup to run services the way production teams actually do.',
     },
   ],
   tech: ['Debian', 'Linux', 'Docker', 'Networking', 'Self-hosting', 'Minecraft server admin'],

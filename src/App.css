@@ -556,6 +556,285 @@
 }
 
 /* ============================================================
+   Homelab
+   ============================================================ */
+.lab-stats {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 0 0 0.5rem;
+}
+.lab-stats li {
+  flex: 1 1 140px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.1rem 1.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.lab-stat-value {
+  font-size: 1.9rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--accent-strong);
+}
+.lab-stat-label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.lab-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.lab-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.lab-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+}
+
+.lab-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 1.5rem;
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--border);
+}
+.lab-host {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.lab-hostname {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--text);
+}
+.lab-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: var(--muted);
+}
+.lab-dot--online {
+  background: #22c55e;
+  animation: lab-pulse 2.4s ease-out infinite;
+}
+.lab-dot--workstation {
+  background: var(--accent);
+}
+@keyframes lab-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.45);
+  }
+  70% {
+    box-shadow: 0 0 0 7px rgba(34, 197, 94, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+  }
+}
+.lab-status-label {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.lab-card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+.lab-role {
+  font-weight: 600;
+  color: var(--accent-strong);
+  margin: 0;
+}
+.lab-blurb {
+  color: var(--muted);
+  margin: 0;
+}
+
+.lab-hero {
+  margin: 0 0 0.5rem;
+}
+
+/* Rig photo (kept for when hardware shots get added later) */
+.lab-photo {
+  margin: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.lab-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
+}
+
+/* fastfetch screenshot, framed like a terminal window */
+.lab-terminal {
+  margin: 0;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid #20242c;
+  box-shadow: var(--shadow);
+  background: #0d1117;
+}
+.lab-terminal-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  height: 28px;
+  padding: 0 0.7rem;
+  background: #161b22;
+  border-bottom: 1px solid #20242c;
+}
+.lab-tl {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #3a3f4b;
+}
+.lab-tl:nth-child(1) {
+  background: #ff5f56;
+}
+.lab-tl:nth-child(2) {
+  background: #ffbd2e;
+}
+.lab-tl:nth-child(3) {
+  background: #27c93f;
+}
+.lab-terminal-name {
+  margin-left: 0.4rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.72rem;
+  color: #8b93a1;
+}
+.lab-terminal img {
+  width: 100%;
+  display: block;
+}
+
+/* Placeholder shown until the real image is added */
+.lab-shot--ph {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-align: center;
+  min-height: 150px;
+  padding: 1.2rem;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  color: var(--muted);
+}
+.lab-shot-ph-icon {
+  font-size: 1.5rem;
+  opacity: 0.5;
+  line-height: 1;
+}
+.lab-shot-ph-label {
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+.lab-shot-ph-path {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.72rem;
+  color: var(--muted);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.15rem 0.45rem;
+  word-break: break-all;
+}
+
+/* Spec table */
+.lab-specs {
+  margin: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+.lab-spec {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 0.5rem;
+  padding: 0.55rem 0.85rem;
+  font-size: 0.88rem;
+}
+.lab-spec:not(:last-child) {
+  border-bottom: 1px solid var(--border);
+}
+.lab-spec dt {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  align-self: center;
+}
+.lab-spec dd {
+  margin: 0;
+  color: var(--text);
+}
+
+.lab-services-label {
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin: 0.3rem 0 -0.2rem;
+}
+
+/* Why cards */
+.lab-why {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+.lab-why-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.6rem;
+  box-shadow: var(--shadow);
+}
+.lab-why-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.6rem;
+}
+.lab-why-card p {
+  margin: 0;
+  color: #38424d;
+}
+
+/* ============================================================
    Footer
    ============================================================ */
 .footer {
@@ -653,6 +932,11 @@
     justify-content: center;
   }
 
+  /* Homelab: stack the why cards on narrow screens */
+  .lab-why {
+    grid-template-columns: 1fr;
+  }
+
   .video-container,
   .float-media {
     float: none;
@@ -708,8 +992,22 @@
   .role,
   .edu-card,
   .skill-group,
-  .cta-block {
+  .cta-block,
+  .lab-why-card {
     padding: 1.3rem;
+  }
+  .lab-card-head {
+    padding: 0.75rem 1.2rem;
+  }
+  .lab-card-body {
+    padding: 1.2rem;
+  }
+  .lab-stat-value {
+    font-size: 1.6rem;
+  }
+  /* Let long spec labels sit above their value rather than squeeze */
+  .lab-spec {
+    grid-template-columns: 90px 1fr;
   }
   .role-head h2 {
     font-size: 1.18rem;

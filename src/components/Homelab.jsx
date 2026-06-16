@@ -2,6 +2,7 @@
 import { useEffect } from 'react';
 
 import transition from '../transition';
+import LabShot from './LabShot';
 import { homelab } from '../data/content';
 
 function Homelab() {
@@ -16,26 +17,66 @@ function Homelab() {
         <p className="page-sub">{homelab.tagline}</p>
       </header>
 
+      <ul className="lab-stats">
+        {homelab.stats.map((s) => (
+          <li key={s.label}>
+            <span className="lab-stat-value">{s.value}</span>
+            <span className="lab-stat-label">{s.label}</span>
+          </li>
+        ))}
+      </ul>
+
+      <div className="lab-hero">
+        <LabShot
+          kind="terminal"
+          src={homelab.hero.src}
+          alt="fastfetch output for every machine in the lab"
+          caption={homelab.hero.caption}
+        />
+      </div>
+
       {/* Hardware */}
       <section className="block">
-        <h2 className="section-label">Hardware</h2>
+        <h2 className="section-label">The rigs</h2>
 
-        <div className="project-stack">
+        <div className="lab-grid">
           {homelab.boxes.map((box) => (
-            <article key={box.hostname} className="role">
-              <div className="role-head">
-                <h2>{box.hostname}</h2>
-                <span className="role-dates">{box.ip}</span>
+            <article key={box.hostname} className="lab-card">
+              <div className="lab-card-head">
+                <div className="lab-host">
+                  <span className={`lab-dot lab-dot--${box.status}`} aria-hidden="true" />
+                  <span className="lab-hostname">{box.hostname}</span>
+                </div>
+                <span className="lab-status-label">{box.statusLabel}</span>
               </div>
-              <p className="role-org">{box.role}</p>
-              <p className="project-meta">{box.specs}</p>
 
-              <p className="role-note">Running</p>
-              <ul className="tech-list">
-                {box.services.map((s) => (
-                  <li key={s}>{s}</li>
-                ))}
-              </ul>
+              <div className="lab-card-body">
+                <p className="lab-role">{box.role}</p>
+                {box.blurb && <p className="lab-blurb">{box.blurb}</p>}
+
+                <LabShot
+                  kind="terminal"
+                  src={box.fastfetch}
+                  alt={`${box.hostname} system info`}
+                  caption={`${box.hostname} — fastfetch`}
+                />
+
+                <dl className="lab-specs">
+                  {box.specs.map((row) => (
+                    <div className="lab-spec" key={row.k}>
+                      <dt>{row.k}</dt>
+                      <dd>{row.v}</dd>
+                    </div>
+                  ))}
+                </dl>
+
+                <p className="lab-services-label">Running</p>
+                <ul className="tech-list">
+                  {box.services.map((s) => (
+                    <li key={s}>{s}</li>
+                  ))}
+                </ul>
+              </div>
             </article>
           ))}
         </div>
@@ -44,13 +85,14 @@ function Homelab() {
       {/* Why */}
       <section className="block">
         <h2 className="section-label">Why I built it</h2>
-
-        {homelab.why.map((item) => (
-          <article key={item.heading} className="role">
-            <h3 className="project-name">{item.heading}</h3>
-            <p className="project-summary">{item.body}</p>
-          </article>
-        ))}
+        <div className="lab-why">
+          {homelab.why.map((item) => (
+            <article key={item.heading} className="lab-why-card">
+              <h3>{item.heading}</h3>
+              <p>{item.body}</p>
+            </article>
+          ))}
+        </div>
       </section>
 
       {/* Tech tags */}
