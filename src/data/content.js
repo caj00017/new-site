@@ -220,7 +220,7 @@ export const homelab = {
         { k: 'GPU', v: 'AMD Radeon RX 6700 XT' },
         { k: 'Memory', v: '32 GiB' },
         { k: 'OS', v: 'Windows 11 + CachyOS (dual boot)' },
-        { k: 'Address', v: '10.0.0.119' },
+        { k: 'Networking', v: 'Static address · private LAN' },
       ],
       services: ['Heavy development work', 'Gaming', 'General productivity'],
       fastfetch: '/desktop-specs.png',
@@ -236,7 +236,7 @@ export const homelab = {
         { k: 'CPU', v: 'Intel Core i7-6700K · 8 threads' },
         { k: 'Memory', v: '32 GiB' },
         { k: 'OS', v: 'Debian 13 (trixie)' },
-        { k: 'Address', v: '10.0.0.228' },
+        { k: 'Networking', v: 'Static address · private LAN' },
       ],
       services: ['Custom TCP server', 'CPU and RAM-heavy workloads'],
       fastfetch: '/elitedesk-1-fastfetch.png',
@@ -252,14 +252,13 @@ export const homelab = {
         { k: 'CPU', v: 'Intel Core i5-6500T · 4 threads' },
         { k: 'Memory', v: '16 GiB' },
         { k: 'OS', v: 'Debian 13 (trixie)' },
-        { k: 'Address', v: '10.0.0.223' },
+        { k: 'Networking', v: 'Static address · private LAN' },
       ],
       services: ['Pi-hole (planned)', 'Autonomous workflow host', 'Light development'],
       fastfetch: '/elitedesk-2-fastfetch.png',
     },
   ],
-  // DRAFT copy — Chris to rewrite in his own voice. Kept as clean prose so the
-  // page reads as finished even before it's edited.
+  // Short "why" narrative for the homelab page.
   why: [
     {
       heading: 'What it teaches me',
