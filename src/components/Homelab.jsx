@@ -26,15 +26,6 @@ function Homelab() {
         ))}
       </ul>
 
-      <div className="lab-hero">
-        <LabShot
-          kind="terminal"
-          src={homelab.hero.src}
-          alt="fastfetch output for every machine in the lab"
-          caption={homelab.hero.caption}
-        />
-      </div>
-
       {/* Hardware */}
       <section className="block">
         <h2 className="section-label">The rigs</h2>
