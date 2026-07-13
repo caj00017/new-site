@@ -7,18 +7,19 @@ function ProjectCard({ project, featured = false }) {
 
   return (
     <article className={`project-card ${featured ? 'is-featured' : ''}`}>
-      <div className="project-banner" aria-hidden="true" />
+      <div className="project-banner" aria-hidden="true">{project.slug.slice(0, 2).toUpperCase()}</div>
 
       <div className="project-body">
         <header className="project-head">
           <div>
+            <p className="project-id">PROJECT ID // {project.slug.toUpperCase()}</p>
             <h3 className="project-name">{name}</h3>
             <p className="project-tagline">{tagline}</p>
           </div>
           {status && <span className="status-pill">{status}</span>}
         </header>
 
-        <p className="project-meta">{meta}</p>
+        <p className="project-meta"><span>ORIGIN</span> {meta}</p>
         <p className="project-summary">{summary}</p>
 
         {image && (

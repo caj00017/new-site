@@ -1,82 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Silkscreen:wght@400;700&display=swap');
+
 :root {
-  /* Type */
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.6;
-  font-weight: 400;
-
-  /* Palette: refined light + indigo accent */
-  --bg: #fbfbfc;
-  --surface: #ffffff;
-  --surface-2: #f4f4f7;
-  --text: #1b1f2a;
-  --muted: #5c6172;
-  --border: #e7e7ee;
-  --accent: #4f46e5;
-  --accent-strong: #4338ca;
-  --accent-soft: #eef2ff;
-
-  /* Shape */
-  --radius: 14px;
-  --radius-sm: 9px;
-  --shadow: 0 1px 2px rgba(16, 24, 32, 0.04), 0 10px 30px rgba(16, 24, 32, 0.06);
-  --shadow-hover: 0 2px 4px rgba(16, 24, 32, 0.06), 0 16px 44px rgba(16, 24, 32, 0.1);
-  --maxw: 980px;
-
-  color: var(--text);
-  background-color: var(--bg);
-
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  color: #24231f;
+  background: #f2d994;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --bg-dark: #1d1c18;
+  --bg-light: #f2d994;
+  --text: #24231f;
+  --text-light: #f7e6ae;
+  --muted: #665f49;
+  --accent: #8d7d4d;
+  --surface: #f7e6ae;
+  --surface-2: #ead08a;
+  --border: #24231f;
+  --maxw: 1120px;
 }
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
-  background-color: var(--bg);
-}
-
-a {
-  color: var(--accent-strong);
-  font-weight: 500;
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
-
-h1,
-h2,
-h3 {
-  line-height: 1.2;
-  letter-spacing: -0.015em;
-  margin: 0;
-}
-
-h1 {
-  font-size: clamp(2.2rem, 5vw, 3.1rem);
-}
-
-p {
-  margin: 0 0 1rem 0;
-}
-
-img {
-  max-width: 100%;
-  display: block;
-}
-
-ul {
-  margin: 0;
-  padding: 0;
-}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; min-height: 100vh; background-color: var(--bg-light); }
+a { color: inherit; font-weight: 600; text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 4px; }
+h1,h2,h3 { margin: 0; line-height: 1.12; }
+h1,h2 { font-family: 'Silkscreen', monospace; }
+p { margin: 0 0 1rem; }
+img { max-width: 100%; display: block; }
+ul { margin: 0; padding: 0; }
+::selection { color: var(--text-light); background: var(--bg-dark); }
+@media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation-duration: .01ms !important; scroll-behavior: auto !important; } }

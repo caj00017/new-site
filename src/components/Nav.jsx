@@ -17,7 +17,7 @@ function Nav() {
     <nav className="nav">
       <div className="nav-inner">
         <NavLink to="/" className="nav-brand" onClick={() => setOpen(false)}>
-          CJ<span className="nav-brand-dot">.</span>
+          CJ<span className="nav-brand-dot">_SYS</span>
         </NavLink>
 
         <button
@@ -40,7 +40,7 @@ function Nav() {
                 className={({ isActive }) => (isActive ? 'is-active' : '')}
                 onClick={() => setOpen(false)}
               >
-                {l.label}
+                <span aria-hidden="true">0{links.indexOf(l) + 1}/</span>{l.label}
               </NavLink>
             </li>
           ))}

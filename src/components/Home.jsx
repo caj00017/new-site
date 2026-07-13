@@ -1,8 +1,6 @@
 // src/components/Home.jsx
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Avatar from 'react-avatar';
-import TypeIt from 'typeit';
 
 import transition from '../transition';
 import ProjectCard from './ProjectCard';
@@ -12,7 +10,6 @@ import { profile, projects } from '../data/content';
 function Home() {
   useEffect(() => {
     window.scrollTo(0, 0);
-    new TypeIt('#title', { speed: 28, waitUntilVisible: true }).go();
   }, []);
 
   const featured = projects.filter((p) => p.featured);
@@ -21,33 +18,31 @@ function Home() {
     <>
       <header className="hero">
         <div className="hero-text">
-          <p className="hero-eyebrow">Hi, I&apos;m</p>
-          <h1 id="title">{profile.name}</h1>
+          <p className="hero-eyebrow">FIELD NOTE 001 / CANDIDATE PROFILE</p>
+          <h1 id="title"><span>CHRIS</span><span>JONES</span></h1>
           <p className="hero-title">{profile.title}</p>
           <p className="hero-tagline">{profile.tagline}</p>
           <ContactLinks />
         </div>
-
-        <Avatar
-          name="Chris Jones"
-          size="180"
-          round
-          src={profile.avatar}
-          alt="Chris Jones headshot"
-          className="hero-avatar"
-        />
+        <aside className="hero-terminal" aria-label="Candidate status">
+          <div className="terminal-head">STATUS://OPEN</div>
+          <p>&gt; LOCATION <span>MORGANTOWN, WV</span></p>
+          <p>&gt; GRADUATION <span>DEC 2026</span></p>
+          <p>&gt; FOCUS <span>NETWORK DEFENSE</span></p>
+          <p>&gt; CURRENT_OP <span>PORTMANGO</span></p>
+          <div className="packet-art" aria-hidden="true">01001010<br/>11000101<br/>00110110<br/>10101101</div>
+        </aside>
       </header>
 
       <section className="block">
         <div className="block-head">
-          <h2>Featured work</h2>
+          <div><p className="kicker">SELECTED OPERATIONS</p><h2>Field work</h2></div>
           <Link to="/projects" className="block-link">
             All projects →
           </Link>
         </div>
         <p className="block-intro">
-          What I&apos;m building right now: a network mapper in Go, a homelab I run as a networking
-          sandbox, and a distributed machine-learning platform shipping as my senior capstone.
+          Proof of work across network discovery, Linux infrastructure, distributed systems, and low-level software.
         </p>
 
         <div className="project-stack">
@@ -58,10 +53,11 @@ function Home() {
       </section>
 
       <section className="block cta-block">
-        <h2>Additional information</h2>
+        <p className="terminal-prompt">&gt; INITIALIZE CONTACT<span className="cursor">█</span></p>
+        <h2>Let&apos;s inspect the network.</h2>
         <p>
-          Browse my full project list, my work and research experience, or more about my
-          background.
+          I&apos;m looking for cybersecurity and networking teams where curiosity, careful testing,
+          and a willingness to understand the whole stack matter.
         </p>
         <div className="cta-row">
           <Link to="/projects" className="btn btn-primary">

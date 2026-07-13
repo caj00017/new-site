@@ -4,8 +4,8 @@
 
 export const profile = {
   name: 'Christopher Jones',
-  title: 'Computer Science & Cybersecurity',
-  tagline: "Honors student at West Virginia University (Class of '26), focused on security tooling, distributed systems, and low-level software.",
+  title: 'Cybersecurity / Networking / Systems',
+  tagline: "I build security tooling, study networks at the packet level, and run the infrastructure that lets me test both. Seeking cybersecurity and networking roles for 2026.",
   avatar: '/IMG_7895.jpg',
   links: {
     github: 'https://github.com/caj00017',

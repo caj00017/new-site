@@ -15,11 +15,11 @@ function About() {
     <main className="page">
       <header className="page-head">
         <h1>About</h1>
-        <p className="page-sub">A bit more about who I am and what I&apos;m after.</p>
+        <p className="page-sub">Candidate brief: security-minded systems builder, network enthusiast, and patient technical communicator.</p>
       </header>
 
       <section className="about-intro">
-        <Avatar name="Chris Jones" size="140" round src={profile.avatar} alt="Chris Jones headshot" />
+        <div className="portrait-frame"><span>SUBJECT // CJ-26</span><Avatar name="Chris Jones" size="180" src={profile.avatar} alt="Chris Jones headshot" /></div>
         <div>
           <p>
             I&apos;m a fourth-year Honors student at West Virginia University pursuing dual degrees in
@@ -32,7 +32,7 @@ function About() {
             firsthand, and helping ship a distributed machine-learning platform as my senior capstone.
             Alongside that I tutor CS, Cybersecurity, and Computer Engineering students, which keeps my
             own fundamentals sharp. I&apos;m looking for software engineering and cybersecurity roles
-            where I can keep doing exactly this.
+            where I can contribute to network security, defensive tooling, infrastructure, or systems engineering.
           </p>
           <ContactLinks />
         </div>

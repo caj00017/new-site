@@ -29,7 +29,7 @@ function App() {
         </AnimatePresence>
 
         <footer className="footer">
-          Christopher Jones · {new Date().getFullYear()} · References available upon request
+          <span>END OF TRANSMISSION</span> Christopher Jones · {new Date().getFullYear()} · Morgantown, WV
         </footer>
       </div>
     </>
