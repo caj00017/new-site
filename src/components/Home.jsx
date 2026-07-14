@@ -1,6 +1,7 @@
 // src/components/Home.jsx
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import TypeIt from 'typeit';
 
 import transition from '../transition';
 import ProjectCard from './ProjectCard';
@@ -8,8 +9,31 @@ import ContactLinks from './ContactLinks';
 import { profile, projects } from '../data/content';
 
 function Home() {
+  const titleRef = useRef(null);
+
   useEffect(() => {
     window.scrollTo(0, 0);
+
+    const titleElement = titleRef.current;
+    let typewriter;
+    const startTyping = window.setTimeout(() => {
+      typewriter = new TypeIt(titleElement, {
+        speed: 85,
+        startDelay: 250,
+        cursorChar: '_',
+        lifeLike: true,
+      })
+        .type('CHRIS')
+        .break()
+        .type('JONES')
+        .go();
+    }, 0);
+
+    return () => {
+      window.clearTimeout(startTyping);
+      typewriter?.destroy();
+      titleElement?.replaceChildren();
+    };
   }, []);
 
   const featured = projects.filter((p) => p.featured);
@@ -19,7 +43,7 @@ function Home() {
       <header className="hero">
         <div className="hero-text">
           <p className="hero-eyebrow">FIELD NOTE 001 / CANDIDATE PROFILE</p>
-          <h1 id="title"><span>CHRIS</span><span>JONES</span></h1>
+          <h1 ref={titleRef} aria-label={profile.name} />
           <p className="hero-title">{profile.title}</p>
           <p className="hero-tagline">{profile.tagline}</p>
           <ContactLinks />
