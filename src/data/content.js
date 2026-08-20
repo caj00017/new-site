@@ -5,7 +5,7 @@
 export const profile = {
   name: 'Christopher Jones',
   title: 'Computer Science & Cybersecurity',
-  tagline: "Honors student at West Virginia University (Class of '26) building toward a career in systems administration, systems engineering, and security engineering — I run a homelab of real Linux infrastructure and learn by operating, breaking, and rebuilding it.",
+  tagline: "Honors student at West Virginia University (Class of '26) building toward a career in systems administration, systems engineering, and security engineering.",
   avatar: '/IMG_7895.jpg',
   links: {
     github: 'https://github.com/caj00017',

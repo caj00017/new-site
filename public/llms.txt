@@ -1,0 +1,200 @@
+# Christopher Jones
+
+> Systems-minded Computer Science and Cybersecurity student at West Virginia University (graduating December 2026), building toward a career in systems administration, systems engineering, and security engineering.
+
+This file is a machine-readable summary of [cjones.dev](https://cjones.dev/), a personal portfolio. It consolidates the site's content so AI agents and LLMs can understand who Christopher Jones is, what he has built, and what he is working toward, without needing to render JavaScript.
+
+## About
+
+Christopher Jones is a fourth-year Honors student at West Virginia University pursuing dual degrees in Computer Science and Cybersecurity, graduating in December 2026. He is happiest somewhere near the metal (networking, operating systems, and real Linux infrastructure), and learns best by building and operating systems that force him to understand how they actually work underneath.
+
+Right now he is writing a network mapper in Go to learn the language and the protocols firsthand, running a homelab of always-on Linux servers that includes a RHEL 10 virtual lab for RHCSA preparation, and helping ship a distributed machine-learning platform as his senior capstone. Alongside that he tutors Computer Science, Cybersecurity, and Computer Engineering students, which keeps his own fundamentals sharp. He is looking for systems administration, systems engineering, and security engineering roles.
+
+## Contact and profiles
+
+- [GitHub](https://github.com/caj00017)
+- [LinkedIn](https://www.linkedin.com/in/christopher-jones-729089254/)
+- [Handshake](https://app.joinhandshake.com/profiles/cjones)
+- [Resume (PDF)](https://cjones.dev/resume.pdf)
+- [Email](mailto:caj00017@mix.wvu.edu)
+
+## Education
+
+- School: West Virginia University, Morgantown, WV
+- Degree: Dual B.S. in Computer Science and Cybersecurity
+- Dates: Aug 2022 - Dec 2026
+- GPA: 3.79
+- Honors: President's List, Honors College
+- Relevant coursework: Secure Software Development, Operating System Structure, Web Application Design, File and Data Structures, Analysis of Algorithms, Discrete Mathematics, Calculus I-III
+
+## Skills
+
+- Languages: Java, C / C++, Go, JavaScript, HTML / CSS, x86 Assembly
+- Frameworks and tools: React, Vite, .NET 8, Node.js, Git / GitHub, Docker, Linux
+- Systems and networking: Linux administration, systemd, SELinux, firewalld, Virtualization, TCP/IP, DNS, Wireshark, Apache Spark, Apache Hadoop, Firestore, MySQL, QEMU
+- Spoken: English (native), Spanish (intermediate)
+
+## Experience
+
+### Tutor, LCSEE Learning and Mentoring Center - West Virginia University (Sept 2024 - Present)
+
+Provides free, one-on-one coursework help to students in Computer Science, Cybersecurity, and Computer Engineering. Reinforces concepts across programming, algorithms, and systems, and coaches debugging and problem-solving strategies that build independent learners.
+
+Courses tutored (passed with an A): CS 110 Introduction to Computer Science, CS 111 Introduction to Data Structures, CS 210 File and Data Structures, CS 220 Discrete Mathematics, CS 310 Principles of Programming Languages, CS 320 Analysis of Algorithms, CS 350 Computer System Concepts, CS 450 Operating Systems Structure, CPE 310 Microprocessor Systems, CYBE 266 Foundations of Cybersecurity, CYBE 366 Secure Software Development, CS 440 Database Design and Theory, CS 495 Independent Study, CPE 453 Data/Computer Communications, CYBE 460 Foundation of Cybersecurity 2, CYBE 466 Host Based Cyber Defense, CYBE 467 Penetration Testing.
+
+### Robotics Instructor Intern - NASA Katherine Johnson IV&V Education Resource Center (Summers 2023 and 2024)
+
+Across two summers with the West Virginia Robotics Alliance, taught robotics programming to elementary and middle-school students on the VEX IQ platform, designed and ran engaging STEM activities, and helped organize a regional drone competition. Recognized by supervisors for adaptability, reliability, and effective communication.
+
+## Projects
+
+### portmango - A network mapper built from scratch in Go
+
+- Status: In active development
+- Context: Personal project, 2026 - present
+
+A network mapper built from the ground up in Go to deepen systems-engineering and networking skills. Rather than cloning nmap feature-for-feature, portmango re-implements the core discovery techniques (ARP-based local host discovery, TCP SYN and connect scanning, and ICMP probing) while studying each protocol at the packet level and verifying the behavior in Wireshark.
+
+Highlights:
+
+- Designed around a structured, JSON-first output model rather than terminal text, so results are machine-readable by default.
+- Exposes the scanner to AI agents over the Model Context Protocol (MCP) for authorized network reconnaissance, a use case CLI tools like nmap were never shaped for.
+- Developed and tested against an isolated, containerized lab network to keep all scanning in-scope and reproducible.
+- Documented end to end in a developer's notebook capturing the design decisions and trade-offs behind each module.
+
+Tech: Go, TCP/IP, ARP, ICMP, Wireshark, Docker, Model Context Protocol
+
+### PICARD - A platform for distributed machine-learning experiments
+
+- Status: In active development
+- Context: CSEE 480 capstone, 5-person team, Spring 2026 - present
+
+Lets WVU researchers run machine-learning experiments on a dedicated Hadoop/Spark cluster without managing the distributed infrastructure themselves: upload an algorithm and dataset, set parameters, hit submit, and the platform handles authentication, queueing, distributed execution, and results. It grew out of a faculty thesis on detecting rare events in massive datasets and productizes that workflow for any researcher.
+
+Highlights:
+
+- Designed the Parameter Sweep Engine: server-side batch generation that expands a range of parameters into one atomic, trackable batch, turning the tool into a proper instrument for ML research.
+- Built the Onboarding Portal that replaces undocumented tribal knowledge with a canonical architecture walkthrough, setup guide, and troubleshooting reference.
+- Produced the architecture diagrams and mapped the critical code paths across the React, .NET, and Spark stack to guide implementation.
+- Helped delegate work across the team and drove the design and background research behind the next development phase.
+
+Tech: React, Vite, .NET 8, Docker Swarm, Apache Spark, Apache Hadoop, MySQL, OAuth 2.0
+
+### Homelab - Always-on Linux infrastructure and networking sandbox
+
+- Status: Always on
+- Context: Personal infrastructure, 2025 - present
+- Link: [Full setup](https://cjones.dev/homelab)
+
+Two HP EliteDesks running Debian, configured and operated as real Linux infrastructure rather than a throwaway VM. lab01 runs a custom TCP server; lab02 hosts always-on services including a personal AI assistant and an autonomous workflow engine. Both machines serve as live scan targets for portmango, giving a controlled environment with real hosts, real traffic, and real consequences when something breaks.
+
+Highlights:
+
+- Configured and operates two always-on Debian servers from scratch: installation, networking, service management, and everything in between.
+- Runs a custom TCP server on the heavier box; the lighter one handles Pi-hole DNS and always-on service hosting.
+- Functions as a live networking sandbox for portmango: real ARP, TCP, and ICMP traffic across two physical machines with reproducible scan targets.
+- All services self-administered: no managed hosting, no support ticket when something breaks.
+
+Tech: Debian, Linux, TCP/IP, DNS, Docker, Networking, Self-hosting
+
+### MergeConflict (MPX) - A small operating system written from scratch
+
+- Status: Source available
+- Context: CS 450 team project, Fall 2024
+- Link: [Release 6.0 on GitHub](https://github.com/WVU-CS450/MergeConflict/releases/tag/R6)
+
+A working multiprogramming executive: a small operating system written in C and x86 assembly and built up over a semester with a four-person team, tested under QEMU. It supports process creation and scheduling, memory allocation, an interactive command handler, and device I/O. Involved low-level debugging, careful teamwork, and the payoff of watching a real OS boot and run.
+
+Highlights:
+
+- Built without the C standard library, so many core routines were implemented from scratch, including the itoa and intToBCD conversions.
+- Contributed across the kernel: process control, memory management, and the command handler.
+- Practiced disciplined low-level debugging against a QEMU-emulated target.
+
+Tech: C, x86 Assembly, QEMU
+
+### Generative AI in Programming Work - A research report
+
+- Status: Available to read
+- Context: Research report, WVU, unpublished
+- Link: [Read the report](https://docs.google.com/document/d/16r7Xpsy2Y9nXnA7KpYg6BSHmOL50XLau0qD36neGq28/edit)
+
+An in-depth analysis of how generative AI is reshaping programming work, weighing real productivity gains for experienced developers against the risks of over-reliance for novice programmers. Synthesized scholarly research with interviews of faculty experts and laid out best practices for using AI responsibly in professional software development.
+
+Highlights:
+
+- Synthesized academic sources and faculty interviews into a single argument.
+- Examined the ethical and practical implications of AI in the software workplace.
+
+Tech: Technical writing, Research
+
+### TaskGarden - A gamified task manager that grows a virtual plant
+
+- Status: Live demo
+- Context: CS 230 team project, Spring 2024
+- Links: [Try the live app](https://taskgarden-8c627.web.app/), [Source on GitHub](https://github.com/WVU-CS230-2024-01-Group10/TaskGarden)
+
+A task-management web app where completing tasks earns points that grow a virtual plant, a playful take on productivity. Built with a five-person team using React on the front end and Google Firestore on the back end, deployed on Firebase Hosting.
+
+Highlights:
+
+- Implemented the React front end and integrated it with a Firestore data model.
+- Shipped a working, hosted product over the course of a semester alongside teammates.
+
+Tech: React, Firestore, Firebase Hosting
+
+## Homelab
+
+Two HP EliteDesks and a custom desktop, serving as a hands-on networking sandbox for TCP/IP work, self-hosted services, and learning how infrastructure actually behaves.
+
+Stats: 3 machines, 2 always-on servers, 3 operating systems.
+
+### cjones-desktop - Daily driver and command center (Workstation)
+
+A custom-built desktop for gaming, heavy development, and dual-booting. Landed on CachyOS for its performance tuning and Windows for compatibility, having also run Fedora and Ubuntu on this machine over the years. The command center for the rest of the lab.
+
+- CPU: AMD Ryzen 9 5900X, 24 threads
+- GPU: AMD Radeon RX 6700 XT
+- Memory: 32 GiB
+- OS: Windows 11 + CachyOS (dual boot)
+- Uses: Heavy development work, Gaming, General productivity
+
+### lab01 - TCP server and primary network services host (Always on)
+
+The heavier of the two lab boxes, chosen for its CPU and RAM headroom. Runs the custom TCP server and doubles as a primary scan target for portmango network-mapping experiments.
+
+RHEL Virtual Lab: lab01 also hosts a RHEL 10 virtual lab, a hands-on environment for practicing systems administration rather than just studying it. Inside VMs on this box, work covers installation and administration, users and permissions, systemd, networking and SSH, firewalld, SELinux, storage and filesystems, package management, and troubleshooting. It supports preparation for the Red Hat Certified System Administrator (RHCSA) certification and, more broadly, builds the habit of operating, breaking, and rebuilding real Linux environments. Reproducible provisioning with Kickstart and Ansible is next on the roadmap.
+
+- Model: HP EliteDesk 800 G3 DM
+- CPU: Intel Core i7-6700K, 8 threads
+- Memory: 32 GiB
+- OS: Debian 13 (trixie)
+- Uses: Custom TCP server, CPU and RAM-heavy workloads
+
+### lab02 - Light dev, sandboxing and always-on tools (Always on)
+
+The lighter of the two lab boxes, home to Pi-hole, autonomous workflows, and anything that needs to stay on around the clock. Previously ran Ubuntu Server before moving to Debian for stability and consistency across the lab. Also acts as a second scan target for portmango.
+
+- Model: HP EliteDesk 800 G3 DM
+- CPU: Intel Core i5-6500T, 4 threads
+- Memory: 16 GiB
+- OS: Debian 13 (trixie)
+- Uses: Pi-hole (planned), Autonomous workflow host, Light development
+
+### What it teaches
+
+Cloud platforms hide the hard parts behind a friendly dashboard; running this hardware does not allow skipping them. Every service on these machines is something installed, secured, and kept alive by hand, which requires actually understanding Linux administration, networking, and the dozens of small failures that never make it into a tutorial. When something breaks there is no support ticket. That feedback loop has taught more about how real systems behave than any single class could.
+
+### Where it is going
+
+The lab is deliberately never finished. Next on the list is a reverse proxy so services are reachable by name instead of by IP address, Pi-hole for network-wide DNS and ad-blocking on lab02, and standing both boxes up as a proper networking sandbox for developing and validating portmango against real hosts and live traffic. Further out: consolidate storage into a NAS for backups and media, and stand up a small container-orchestration setup to run services the way production teams actually do. Underneath all of it is the same goal: to keep building the hands-on Linux administration experience that carries into a systems administration or systems engineering career.
+
+Homelab tech: Debian, Linux, Docker, TCP/IP, Networking, DNS, Self-hosting
+
+## Site map
+
+- [Home](https://cjones.dev/)
+- [About](https://cjones.dev/about)
+- [Projects](https://cjones.dev/projects)
+- [Experience](https://cjones.dev/experience)
+- [Homelab](https://cjones.dev/homelab)
