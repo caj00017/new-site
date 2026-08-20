@@ -46,8 +46,8 @@ function Home() {
           </Link>
         </div>
         <p className="block-intro">
-          What I&apos;m building right now: a network mapper in Go, a homelab I run as a networking
-          sandbox, and a distributed machine-learning platform shipping as my senior capstone.
+          What I&apos;m building right now: a network mapper in Go, a homelab I run as real Linux
+          infrastructure, and a distributed machine-learning platform shipping as my senior capstone.
         </p>
 
         <div className="project-stack">

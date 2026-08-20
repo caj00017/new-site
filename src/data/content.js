@@ -5,7 +5,7 @@
 export const profile = {
   name: 'Christopher Jones',
   title: 'Computer Science & Cybersecurity',
-  tagline: "Honors student at West Virginia University (Class of '26), focused on security tooling, distributed systems, and low-level software.",
+  tagline: "Honors student at West Virginia University (Class of '26) building toward a career in systems administration, systems engineering, and security engineering — I run a homelab of real Linux infrastructure and learn by operating, breaking, and rebuilding it.",
   avatar: '/IMG_7895.jpg',
   links: {
     github: 'https://github.com/caj00017',
@@ -267,7 +267,7 @@ export const homelab = {
     },
     {
       heading: 'Where it\'s going',
-      body: 'The lab is deliberately never finished. Next on the list is a reverse proxy so services are reachable by name instead of by IP address, Pi-hole for network-wide DNS and ad-blocking on lab02, and standing both boxes up as a proper networking sandbox: a controlled environment to develop and validate portmango against real hosts and live traffic. Further out I want to consolidate storage into a NAS for backups and media, and stand up a small container-orchestration setup to run services the way production teams actually do.',
+      body: 'The lab is deliberately never finished. Next on the list is a reverse proxy so services are reachable by name instead of by IP address, Pi-hole for network-wide DNS and ad-blocking on lab02, and standing both boxes up as a proper networking sandbox: a controlled environment to develop and validate portmango against real hosts and live traffic. Further out I want to consolidate storage into a NAS for backups and media, and stand up a small container-orchestration setup to run services the way production teams actually do. Underneath all of it is the same goal: to keep building the hands-on Linux administration experience that carries me into a systems administration or systems engineering career.',
     },
   ],
   tech: ['Debian', 'Linux', 'Docker', 'TCP/IP', 'Networking', 'DNS', 'Self-hosting'],
@@ -276,6 +276,6 @@ export const homelab = {
 export const skills = [
   { group: 'Languages', items: ['Java', 'C / C++', 'Go', 'JavaScript', 'HTML / CSS', 'x86 Assembly'] },
   { group: 'Frameworks & tools', items: ['React', 'Vite', '.NET 8', 'Node.js', 'Git / GitHub', 'Docker', 'Linux'] },
-  { group: 'Systems & networking', items: ['TCP/IP', 'DNS', 'Wireshark', 'Apache Spark', 'Apache Hadoop', 'Firestore', 'MySQL', 'QEMU'] },
+  { group: 'Systems & networking', items: ['Linux administration', 'systemd', 'SELinux', 'firewalld', 'Virtualization', 'TCP/IP', 'DNS', 'Wireshark', 'Apache Spark', 'Apache Hadoop', 'Firestore', 'MySQL', 'QEMU'] },
   { group: 'Spoken', items: ['English (native)', 'Spanish (intermediate)'] },
 ];

@@ -24,15 +24,17 @@ function About() {
           <p>
             I&apos;m a fourth-year Honors student at West Virginia University pursuing dual degrees in
             Computer Science and Cybersecurity, graduating in December 2026. I&apos;m happiest somewhere
-            near the metal (networking, operating systems, distributed infrastructure), and I learn
-            best by building tools that force me to understand how things actually work underneath.
+            near the metal (networking, operating systems, and real Linux infrastructure), and I learn
+            best by building and operating systems that force me to understand how they actually work
+            underneath.
           </p>
           <p>
             Right now I&apos;m writing a network mapper in Go to learn the language and the protocols
-            firsthand, and helping ship a distributed machine-learning platform as my senior capstone.
-            Alongside that I tutor CS, Cybersecurity, and Computer Engineering students, which keeps my
-            own fundamentals sharp. I&apos;m looking for software engineering and cybersecurity roles
-            where I can keep doing exactly this.
+            firsthand, running a homelab of always-on Linux servers that includes a RHEL 10 virtual lab
+            for RHCSA preparation, and helping ship a distributed machine-learning platform as my senior
+            capstone. Alongside that I tutor CS, Cybersecurity, and Computer Engineering students, which
+            keeps my own fundamentals sharp. I&apos;m looking for systems administration, systems
+            engineering, and security engineering roles where I can keep doing exactly this.
           </p>
           <ContactLinks />
         </div>
