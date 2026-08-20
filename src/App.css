@@ -708,6 +708,30 @@
   margin: 0;
 }
 
+/* Optional callout inside a rig card (e.g. the RHEL virtual lab on lab01) */
+.lab-note {
+  margin: 0;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.lab-note-heading {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.76rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--accent-strong);
+}
+.lab-note p {
+  margin: 0;
+  color: var(--muted);
+}
+
 /* Rig photo (kept for when hardware shots get added later) */
 .lab-photo {
   margin: 0;

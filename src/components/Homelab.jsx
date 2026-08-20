@@ -54,6 +54,13 @@ function Homelab() {
                 <p className="lab-role">{box.role}</p>
                 {box.blurb && <p className="lab-blurb">{box.blurb}</p>}
 
+                {box.note && (
+                  <div className="lab-note">
+                    <span className="lab-note-heading">{box.note.heading}</span>
+                    <p>{box.note.body}</p>
+                  </div>
+                )}
+
                 <LabShot
                   kind="terminal"
                   src={box.fastfetch}

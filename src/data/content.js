@@ -230,6 +230,10 @@ export const homelab = {
       status: 'online',
       statusLabel: 'Always on',
       blurb: 'The heavier of the two lab boxes, chosen for its CPU and RAM headroom. Runs the custom TCP server and doubles as a primary scan target for portmango network-mapping experiments.',
+      note: {
+        heading: 'RHEL Virtual Lab',
+        body: 'lab01 also hosts a RHEL 10 virtual lab, a hands-on environment for practicing systems administration rather than just studying it. Inside VMs on this box I work through installation and administration, users and permissions, systemd, networking and SSH, firewalld, SELinux, storage and filesystems, package management, and troubleshooting. It supports my preparation for the Red Hat Certified System Administrator (RHCSA) certification and, more broadly, builds the habit of operating, breaking, and rebuilding real Linux environments. Reproducible provisioning with Kickstart and Ansible is next on the roadmap.',
+      },
       specs: [
         { k: 'Model', v: 'HP EliteDesk 800 G3 DM' },
         { k: 'CPU', v: 'Intel Core i7-6700K · 8 threads' },
