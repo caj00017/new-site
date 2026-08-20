@@ -58,11 +58,10 @@ A network mapper built from the ground up in Go to deepen systems-engineering an
 Highlights:
 
 - Designed around a structured, JSON-first output model rather than terminal text, so results are machine-readable by default.
-- Exposes the scanner to AI agents over the Model Context Protocol (MCP) for authorized network reconnaissance, a use case CLI tools like nmap were never shaped for.
 - Developed and tested against an isolated, containerized lab network to keep all scanning in-scope and reproducible.
 - Documented end to end in a developer's notebook capturing the design decisions and trade-offs behind each module.
 
-Tech: Go, TCP/IP, ARP, ICMP, Wireshark, Docker, Model Context Protocol
+Tech: Go, TCP/IP, ARP, ICMP, Wireshark, Docker
 
 ### PICARD - A platform for distributed machine-learning experiments
 
@@ -159,7 +158,7 @@ A custom-built desktop for gaming, heavy development, and dual-booting. Landed o
 - OS: Windows 11 + CachyOS (dual boot)
 - Uses: Heavy development work, Gaming, General productivity
 
-### lab01 - TCP server and primary network services host (Always on)
+### Pollux aka lab01 - TCP server and primary network services host (Always on)
 
 The heavier of the two lab boxes, chosen for its CPU and RAM headroom. Runs the custom TCP server and doubles as a primary scan target for portmango network-mapping experiments.
 
@@ -171,7 +170,7 @@ RHEL Virtual Lab: lab01 also hosts a RHEL 10 virtual lab, a hands-on environment
 - OS: Debian 13 (trixie)
 - Uses: Custom TCP server, CPU and RAM-heavy workloads
 
-### lab02 - Light dev, sandboxing and always-on tools (Always on)
+### Castor aka lab02 - Light dev, sandboxing and always-on tools (Always on)
 
 The lighter of the two lab boxes, home to Pi-hole, autonomous workflows, and anything that needs to stay on around the clock. Previously ran Ubuntu Server before moving to Debian for stability and consistency across the lab. Also acts as a second scan target for portmango.
 

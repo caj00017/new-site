@@ -29,11 +29,10 @@ export const projects = [
       'A network mapper I am building from the ground up in Go to deepen my systems-engineering and networking skills. Rather than cloning nmap feature-for-feature, portmango re-implements the core discovery techniques (ARP-based local host discovery, TCP SYN and connect scanning, and ICMP probing) while I study each protocol at the packet level and verify the behavior in Wireshark.',
     highlights: [
       'Designed around a structured, JSON-first output model rather than terminal text, so results are machine-readable by default.',
-      'Differentiator: exposes the scanner to AI agents over the Model Context Protocol (MCP) for authorized network reconnaissance, a use case CLI tools like nmap were never shaped for.',
       'Developed and tested against an isolated, containerized lab network to keep all scanning in-scope and reproducible.',
       'Documented end to end in a developer’s notebook capturing the design decisions and trade-offs behind each module.',
     ],
-    tech: ['Go', 'TCP/IP', 'ARP', 'ICMP', 'Wireshark', 'Docker', 'Model Context Protocol'],
+    tech: ['Go', 'TCP/IP', 'ARP', 'ICMP', 'Wireshark', 'Docker'],
   },
   {
     slug: 'picard',
@@ -226,6 +225,7 @@ export const homelab = {
     },
     {
       hostname: 'lab01',
+      name: 'Pollux aka lab01',
       role: 'TCP server & primary network services host',
       status: 'online',
       statusLabel: 'Always on',
@@ -245,6 +245,7 @@ export const homelab = {
     },
     {
       hostname: 'lab02',
+      name: 'Castor aka lab02',
       role: 'Light dev, sandboxing & always-on tools',
       status: 'online',
       statusLabel: 'Always on',

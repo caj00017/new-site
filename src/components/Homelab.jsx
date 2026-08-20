@@ -36,7 +36,7 @@ function Homelab() {
               <div className="lab-card-head">
                 <div className="lab-host">
                   <span className={`lab-dot lab-dot--${box.status}`} aria-hidden="true" />
-                  <span className="lab-hostname">{box.hostname}</span>
+                  <span className="lab-hostname">{box.name || box.hostname}</span>
                 </div>
                 <span className="lab-status-label">{box.statusLabel}</span>
               </div>
