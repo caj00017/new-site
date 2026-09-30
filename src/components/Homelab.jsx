@@ -17,57 +17,30 @@ function Homelab() {
         <p className="page-sub">{homelab.tagline}</p>
       </header>
 
-      <ul className="lab-stats">
+      {/* <ul className="lab-stats">
         {homelab.stats.map((s) => (
           <li key={s.label}>
             <span className="lab-stat-value">{s.value}</span>
             <span className="lab-stat-label">{s.label}</span>
           </li>
         ))}
-      </ul>
+      </ul> */}
 
-      {/* Hardware */}
       <section className="block">
-        <h2 className="section-label">The rigs</h2>
-
+        <h2 className="section-label">Infrastructure</h2>
         <div className="lab-grid">
           {homelab.boxes.map((box) => (
             <article key={box.hostname} className="lab-card">
               <div className="lab-card-head">
                 <div className="lab-host">
                   <span className={`lab-dot lab-dot--${box.status}`} aria-hidden="true" />
-                  <span className="lab-hostname">{box.name || box.hostname}</span>
+                  <h3 className="lab-hostname">{box.name}</h3>
                 </div>
                 <span className="lab-status-label">{box.statusLabel}</span>
               </div>
-
               <div className="lab-card-body">
-                {box.photo && (
-                  <LabShot
-                    kind="photo"
-                    src={box.photo}
-                    alt={`${box.hostname} hardware`}
-                    caption={`${box.hostname} photo`}
-                  />
-                )}
-
                 <p className="lab-role">{box.role}</p>
-                {box.blurb && <p className="lab-blurb">{box.blurb}</p>}
-
-                {box.note && (
-                  <div className="lab-note">
-                    <span className="lab-note-heading">{box.note.heading}</span>
-                    <p>{box.note.body}</p>
-                  </div>
-                )}
-
-                <LabShot
-                  kind="terminal"
-                  src={box.fastfetch}
-                  alt={`${box.hostname} system info`}
-                  caption={`${box.hostname}: fastfetch`}
-                />
-
+                <p className="lab-blurb">{box.blurb}</p>
                 <dl className="lab-specs">
                   {box.specs.map((row) => (
                     <div className="lab-spec" key={row.k}>
@@ -76,25 +49,44 @@ function Homelab() {
                     </div>
                   ))}
                 </dl>
-
-                <p className="lab-services-label">Running</p>
-                <ul className="tech-list">
-                  {box.services.map((s) => (
-                    <li key={s}>{s}</li>
-                  ))}
-                </ul>
+                {box.screenshot && <LabShot {...box.screenshot} />}
               </div>
             </article>
           ))}
         </div>
       </section>
 
-      {/* Why */}
       <section className="block">
-        <h2 className="section-label">Why I built it</h2>
-        <div className="lab-why">
-          {homelab.why.map((item) => (
-            <article key={item.heading} className="lab-why-card">
+        <h2 className="section-label">Services</h2>
+        <div className="lab-detail-grid">
+          {homelab.services.map((service) => (
+            <article key={service.heading} className="lab-detail-card">
+              <h3>{service.heading}</h3>
+              <p>{service.body}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="block">
+        <h2 className="section-label">Observability</h2>
+        <p className="block-intro">{homelab.observability.intro}</p>
+        <LabShot {...homelab.observability.screenshot} />
+        <div className="lab-detail-grid lab-observability-tools">
+          {homelab.observability.tools.map((tool) => (
+            <article key={tool.heading} className="lab-detail-card">
+              <h3>{tool.heading}</h3>
+              <p>{tool.body}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="block">
+        <h2 className="section-label">Networking and remote access</h2>
+        <div className="lab-detail-grid">
+          {homelab.networking.map((item) => (
+            <article key={item.heading} className="lab-detail-card">
               <h3>{item.heading}</h3>
               <p>{item.body}</p>
             </article>
@@ -102,14 +94,16 @@ function Homelab() {
         </div>
       </section>
 
-      {/* Tech tags */}
       <section className="block">
-        <h2 className="section-label">Technologies</h2>
-        <ul className="tech-list">
-          {homelab.tech.map((t) => (
-            <li key={t}>{t}</li>
+        <h2 className="section-label">Development and experimentation</h2>
+        <div className="lab-detail-grid">
+          {homelab.development.map((item) => (
+            <article key={item.heading} className="lab-detail-card">
+              <h3>{item.heading}</h3>
+              <p>{item.body}</p>
+            </article>
           ))}
-        </ul>
+        </div>
       </section>
     </main>
   );

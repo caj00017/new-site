@@ -55,18 +55,17 @@ export const projects = [
     slug: 'homelab',
     name: 'Homelab',
     featured: true,
-    tagline: 'Always-on Linux infrastructure and networking sandbox',
+    tagline: 'Self-hosted services, virtualization, and a networking sandbox',
     meta: 'Personal infrastructure · 2025 – present',
     status: 'Always on',
     summary:
-      'Two HP EliteDesks running Debian, configured and operated as real Linux infrastructure rather than a throwaway VM. lab01 runs a custom TCP server; lab02 hosts always-on services including a personal AI assistant and an autonomous workflow engine. Both machines serve as live scan targets for portmango, giving me a controlled environment with real hosts, real traffic, and real consequences when something breaks.',
+      'Two HP EliteDesk Minis: Pollux runs Proxmox VE and hosts most of my services in Linux containers and virtual machines; Castor runs Debian for experimentation and testing. I operate Pi-hole, Jellyfin, and a NeoForge Minecraft server, with metrics and logs collected in an observability stack. The private home LAN also gives portmango real systems to work against.',
     highlights: [
-      'Configured and operate two always-on Debian servers from scratch: installation, networking, service management, and everything in between.',
-      'Runs a custom TCP server on the heavier box; the lighter one handles Pi-hole DNS and always-on service hosting.',
-      'Functions as a live networking sandbox for portmango: real ARP, TCP, and ICMP traffic across two physical machines with reproducible scan targets.',
-      'All services self-administered: no managed hosting, no support ticket when something breaks.',
+      'Pollux is the main Proxmox virtualization node, with 32 GB RAM and a 512 GB NVMe drive. Jellyfin runs in an LXC container.',
+      'Pi-hole provides network-wide DNS/ad blocking and private home.arpa DNS; Pollux acts as a Tailscale subnet router for remote access.',
+      'Prometheus, Grafana, Loki, and Grafana Alloy monitor real workloads, including Minecraft availability, resource usage, response time, and logs.',
     ],
-    tech: ['Debian', 'Linux', 'TCP/IP', 'DNS', 'Docker', 'Networking', 'Self-hosting'],
+    tech: ['Proxmox VE', 'Debian', 'LXC', 'Pi-hole', 'Tailscale', 'Prometheus', 'Grafana', 'Loki', 'Grafana Alloy'],
     links: [
       { label: 'See the full setup', href: '/homelab', primary: true },
     ],
@@ -192,86 +191,100 @@ export const education = {
 };
 
 export const homelab = {
-  tagline: 'Two HP EliteDesks and a custom desktop, serving as a hands-on networking sandbox for TCP/IP work, self-hosted services, and learning how infrastructure actually behaves.',
-  // Quick-glance stats shown as a strip under the page header.
+  tagline: 'Two HP EliteDesk Minis, self-hosted services, and a private home LAN. A homelab for learning how Linux systems behave by configuring, running, and troubleshooting them myself.',
   stats: [
-    { value: '3', label: 'machines' },
-    { value: '2', label: 'always-on servers' },
-    { value: '3', label: 'operating systems' },
+    { value: '2', label: 'physical Linux nodes' },
+    { value: '32 GB', label: 'Pollux RAM' },
+    { value: '512 GB', label: 'Pollux NVMe' },
   ],
-  // A tiled fastfetch of the whole lab, used as a banner under the stats.
-  hero: {
-    src: '/homelab.png',
-    caption: 'fastfetch: the whole lab in one view',
-  },
-  // Each box renders a "rig" card. `fastfetch` is a system-info screenshot that
-  // falls back to a labeled placeholder until the file exists in /public.
-  // Specs below are transcribed from the fastfetch screenshots.
   boxes: [
     {
-      hostname: 'cjones-desktop',
-      role: 'Daily driver & command center',
-      status: 'workstation',
-      statusLabel: 'Workstation',
-      blurb: 'My custom-built desktop for gaming, heavy development, and dual-booting. I landed on CachyOS for its performance tuning and Windows for compatibility; I\'ve also run Fedora and Ubuntu on this machine over the years. The command center for the rest of the lab.',
-      specs: [
-        { k: 'CPU', v: 'AMD Ryzen 9 5900X · 24 threads' },
-        { k: 'GPU', v: 'AMD Radeon RX 6700 XT' },
-        { k: 'Memory', v: '32 GiB' },
-        { k: 'OS', v: 'Windows 11 + CachyOS (dual boot)' },
-      ],
-      services: ['Heavy development work', 'Gaming', 'General productivity'],
-      fastfetch: '/desktop-specs.png',
-    },
-    {
-      hostname: 'lab01',
-      name: 'Pollux aka lab01',
-      role: 'TCP server & primary network services host',
+      hostname: 'pollux',
+      name: 'Pollux',
+      role: 'Main Proxmox virtualization node',
       status: 'online',
-      statusLabel: 'Always on',
-      blurb: 'The heavier of the two lab boxes, chosen for its CPU and RAM headroom. Runs the custom TCP server and doubles as a primary scan target for portmango network-mapping experiments.',
-      note: {
-        heading: 'RHEL Virtual Lab',
-        body: 'lab01 also hosts a RHEL 10 virtual lab, a hands-on environment for practicing systems administration rather than just studying it. Inside VMs on this box I work through installation and administration, users and permissions, systemd, networking and SSH, firewalld, SELinux, storage and filesystems, package management, and troubleshooting. It supports my preparation for the Red Hat Certified System Administrator (RHCSA) certification and, more broadly, builds the habit of operating, breaking, and rebuilding real Linux environments. Reproducible provisioning with Kickstart and Ansible is next on the roadmap.',
-      },
+      statusLabel: 'Primary node',
+      blurb: 'Pollux runs Proxmox VE and hosts most of the lab’s services and workloads in Linux containers and virtual machines. It is also my Tailscale subnet router, providing remote access to internal services.',
       specs: [
-        { k: 'Model', v: 'HP EliteDesk 800 G3 DM' },
+        { k: 'Model', v: 'HP EliteDesk Mini' },
         { k: 'CPU', v: 'Intel Core i7-6700K · 8 threads' },
-        { k: 'Memory', v: '32 GiB' },
-        { k: 'OS', v: 'Debian 13 (trixie)' },
+        { k: 'Memory', v: '32 GB' },
+        { k: 'Storage', v: '512 GB NVMe' },
+        { k: 'OS', v: 'Proxmox VE' },
       ],
-      services: ['Custom TCP server', 'CPU and RAM-heavy workloads'],
-      fastfetch: '/elitedesk-1-fastfetch.png',
+      screenshot: {
+        src: '/proxmox.png',
+        alt: 'Pollux Proxmox dashboard with the Jellyfin container, host CPU and memory graphs, and a console showing system information.',
+        caption: 'Pollux: Proxmox VE dashboard and host console',
+        width: 1910,
+        height: 1073,
+      },
     },
     {
-      hostname: 'lab02',
-      name: 'Castor aka lab02',
-      role: 'Light dev, sandboxing & always-on tools',
-      status: 'online',
-      statusLabel: 'Always on',
-      blurb: 'The lighter of the two lab boxes, home to Pi-hole, autonomous workflows, and anything that needs to stay on around the clock. Previously ran Ubuntu Server; I moved to Debian for stability and consistency across the lab. Also acts as a second scan target for portmango.',
+      hostname: 'castor',
+      name: 'Castor',
+      role: 'Debian node for experimentation and testing',
+      status: 'sandbox',
+      statusLabel: 'Linux node',
+      blurb: 'Castor is a separate physical Debian system for additional Linux experimentation and testing. Most services run on Pollux; Castor gives me another machine to work against without putting every experiment on the main host.',
       specs: [
-        { k: 'Model', v: 'HP EliteDesk 800 G3 DM' },
+        { k: 'Model', v: 'HP EliteDesk 800 G3 Mini' },
         { k: 'CPU', v: 'Intel Core i5-6500T · 4 threads' },
         { k: 'Memory', v: '16 GiB' },
         { k: 'OS', v: 'Debian 13 (trixie)' },
       ],
-      services: ['Pi-hole (planned)', 'Autonomous workflow host', 'Light development'],
-      fastfetch: '/elitedesk-2-fastfetch.png',
     },
   ],
-  // Short "why" narrative for the homelab page.
-  why: [
+  services: [
     {
-      heading: 'What it teaches me',
-      body: 'Cloud platforms hide the hard parts behind a friendly dashboard. Running my own hardware doesn\'t let me skip them. Every service on these machines is something I had to install, secure, and keep alive myself, so I\'ve had to actually understand Linux administration, networking, and the dozens of small failures that never make it into a tutorial. When something breaks there\'s no support ticket; I\'m the one who fixes it, and that feedback loop has taught me more about how real systems behave than any single class could. Part of that is trying operating systems until something clicks: Fedora and Ubuntu on the desktop before settling on CachyOS for its performance tuning, and Ubuntu Server on lab02 before consolidating on Debian for stability and lab cohesion.',
+      heading: 'Pi-hole',
+      body: 'Provides network-wide DNS/ad blocking and private home.arpa DNS. It is part of the internal network configuration, so DNS is something I administer alongside the services that depend on it.',
     },
     {
-      heading: 'Where it\'s going',
-      body: 'The lab is deliberately never finished. Next on the list is a reverse proxy so services are reachable by name instead of by IP address, Pi-hole for network-wide DNS and ad-blocking on lab02, and standing both boxes up as a proper networking sandbox: a controlled environment to develop and validate portmango against real hosts and live traffic. Further out I want to consolidate storage into a NAS for backups and media, and stand up a small container-orchestration setup to run services the way production teams actually do. Underneath all of it is the same goal: to keep building the hands-on Linux administration experience that carries me into a systems administration or systems engineering career.',
+      heading: 'Jellyfin',
+      body: 'A self-hosted media server running in an LXC container on Pollux. It is one of the services I manage through Proxmox.',
+    },
+    {
+      heading: 'Minecraft',
+      body: 'A NeoForge Minecraft server running as a persistent homelab service. Its availability, resource usage, response time, and logs are monitored through the observability stack.',
     },
   ],
-  tech: ['Debian', 'Linux', 'Docker', 'TCP/IP', 'Networking', 'DNS', 'Self-hosting'],
+  observability: {
+    intro: 'I use Prometheus, Grafana, Loki, and Grafana Alloy to monitor workloads I actually run. The Minecraft dashboard brings metrics and logs together so I can check whether the server is available and see what is happening inside the container.',
+    tools: [
+      { heading: 'Prometheus', body: 'Collects and stores metrics from homelab workloads.' },
+      { heading: 'Grafana', body: 'Visualizes metrics and logs in dashboards.' },
+      { heading: 'Loki', body: 'Stores logs for querying alongside metrics in Grafana.' },
+      { heading: 'Grafana Alloy', body: 'Collects and forwards telemetry to the metrics and logging backends where needed.' },
+    ],
+    screenshot: {
+      src: '/grafana.png',
+      alt: 'Grafana Minecraft dashboard showing server availability, players online, container CPU usage, RAM usage, response time, and server logs.',
+      caption: 'Minecraft: availability, players, container CPU, RAM, response time, and logs',
+      width: 1535,
+      height: 637,
+    },
+  },
+  networking: [
+    {
+      heading: 'Private LAN and DNS',
+      body: 'The lab runs on my private home LAN. Pi-hole provides private home.arpa names for internal services as well as network-wide DNS/ad blocking. Physical hosts, containers, and services give me real DNS and service-to-service traffic to inspect and troubleshoot.',
+    },
+    {
+      heading: 'Remote access with Tailscale',
+      body: 'Pollux acts as a Tailscale subnet router so I can reach internal homelab services remotely. That access works with the private DNS configuration, keeping remote access and internal name resolution part of the same setup.',
+    },
+  ],
+  development: [
+    {
+      heading: 'Software against real systems',
+      body: 'The lab gives portmango real network targets and ARP, ICMP, TCP/IP, and DNS traffic to experiment with. Physical Linux nodes and container workloads let me study discovery and service behavior beyond an isolated development environment.',
+    },
+    {
+      heading: 'Operating what I build',
+      body: 'Every service is something I have to configure and keep running myself. Managing Linux hosts, containers, service configuration, and private remote access makes administration and security decisions part of the work. When something breaks, I’m the one who checks the network, metrics, and logs. This is a learning environment that I also use day to day.',
+    },
+  ],
 };
 
 export const skills = [
