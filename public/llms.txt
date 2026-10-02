@@ -29,9 +29,13 @@ Right now he is writing a network mapper in Go to learn the language and the pro
 
 ## Skills
 
-- Languages: Java, C / C++, Go, JavaScript, HTML / CSS, x86 Assembly
-- Frameworks and tools: React, Vite, .NET 8, Node.js, Git / GitHub, Docker, Linux
-- Systems and networking: Linux administration, systemd, SELinux, firewalld, Virtualization, TCP/IP, DNS, Wireshark, Apache Spark, Apache Hadoop, Firestore, MySQL, QEMU
+- Linux & systems: Linux administration, Debian 13, Ubuntu Server, Arch, systemd, SSH, Users / groups / permissions, apt, Storage / filesystems, Apache HTTP Server
+- Networking & troubleshooting: TCP/IP, DNS, ARP, ICMP, Wireshark, Linux networking, Local firewalls, Hardware / software troubleshooting
+- Programming & automation: Go, Python, Bash, PowerShell, C, Java, JavaScript, HTML / CSS, Ansible, Git / GitHub
+- Infrastructure & virtualization: Proxmox VE, LXC, Docker, Docker Swarm, QEMU, Pi-hole, Tailscale, Jellyfin, NeoForge
+- Observability: Prometheus, Grafana, Loki, Grafana Alloy
+- Frameworks & data platforms: React, Vite, .NET 8, Node.js, Apache Spark, Apache Hadoop, MySQL, Firestore, Firebase Hosting, OAuth 2.0
+- Writing & research: Technical writing, Research, Architecture documentation
 - Spoken: English (native), Spanish (intermediate)
 
 ## Experience
@@ -47,37 +51,6 @@ Courses tutored (passed with an A): CS 110 Introduction to Computer Science, CS 
 Across two summers with the West Virginia Robotics Alliance, taught robotics programming to elementary and middle-school students on the VEX IQ platform, designed and ran engaging STEM activities, and helped organize a regional drone competition. Recognized by supervisors for adaptability, reliability, and effective communication.
 
 ## Projects
-
-### portmango - A network mapper built from scratch in Go
-
-- Status: In active development
-- Context: Personal project, 2026 - present
-
-A network mapper built from the ground up in Go to deepen systems-engineering and networking skills. Rather than cloning nmap feature-for-feature, portmango re-implements the core discovery techniques (ARP-based local host discovery, TCP SYN and connect scanning, and ICMP probing) while studying each protocol at the packet level and verifying the behavior in Wireshark.
-
-Highlights:
-
-- Designed around a structured, JSON-first output model rather than terminal text, so results are machine-readable by default.
-- Developed and tested against an isolated, containerized lab network to keep all scanning in-scope and reproducible.
-- Documented end to end in a developer's notebook capturing the design decisions and trade-offs behind each module.
-
-Tech: Go, TCP/IP, ARP, ICMP, Wireshark, Docker
-
-### PICARD - A platform for distributed machine-learning experiments
-
-- Status: In active development
-- Context: CSEE 480 capstone, 5-person team, Spring 2026 - present
-
-Lets WVU researchers run machine-learning experiments on a dedicated Hadoop/Spark cluster without managing the distributed infrastructure themselves: upload an algorithm and dataset, set parameters, hit submit, and the platform handles authentication, queueing, distributed execution, and results. It grew out of a faculty thesis on detecting rare events in massive datasets and productizes that workflow for any researcher.
-
-Highlights:
-
-- Designed the Parameter Sweep Engine: server-side batch generation that expands a range of parameters into one atomic, trackable batch, turning the tool into a proper instrument for ML research.
-- Built the Onboarding Portal that replaces undocumented tribal knowledge with a canonical architecture walkthrough, setup guide, and troubleshooting reference.
-- Produced the architecture diagrams and mapped the critical code paths across the React, .NET, and Spark stack to guide implementation.
-- Helped delegate work across the team and drove the design and background research behind the next development phase.
-
-Tech: React, Vite, .NET 8, Docker Swarm, Apache Spark, Apache Hadoop, MySQL, OAuth 2.0
 
 ### Homelab - Self-hosted services, virtualization, and a networking sandbox
 
@@ -95,13 +68,44 @@ Highlights:
 
 Tech: Proxmox VE, Debian, LXC, Pi-hole, Tailscale, Prometheus, Grafana, Loki, Grafana Alloy
 
+### PICARD - A platform for distributed machine-learning experiments
+
+- Status: In active development
+- Context: CSEE 480 capstone, 5-person team, Spring 2026 - present
+
+Lets WVU researchers run machine-learning experiments on a dedicated Hadoop/Spark cluster without managing the distributed infrastructure themselves: upload an algorithm and dataset, set parameters, hit submit, and the platform handles authentication, queueing, distributed execution, and results. It grew out of a faculty thesis on detecting rare events in massive datasets and productizes that workflow for any researcher.
+
+Highlights:
+
+- Designed the Parameter Sweep Engine: server-side batch generation that expands a range of parameters into one atomic, trackable batch, turning the tool into a proper instrument for ML research.
+- Built the Onboarding Portal that replaces undocumented tribal knowledge with a canonical architecture walkthrough, setup guide, and troubleshooting reference.
+- Produced the architecture diagrams and mapped the critical code paths across the React, .NET, and Spark stack to guide implementation.
+- Helped delegate work across the team and drove the design and background research behind the next development phase.
+
+Tech: React, Vite, .NET 8, Docker Swarm, Apache Spark, Apache Hadoop, MySQL, OAuth 2.0
+
+### portmango - A network mapper built from scratch in Go
+
+- Status: In early development
+- Context: Personal project, 2026 - present
+
+A network mapper built from the ground up in Go to deepen systems-engineering and networking skills. Rather than cloning nmap feature-for-feature, portmango re-implements the core discovery techniques (ARP-based local host discovery, TCP SYN and connect scanning, and ICMP probing) while studying each protocol at the packet level and verifying the behavior in Wireshark.
+
+Highlights:
+
+- Designed around a structured, JSON-first output model rather than terminal text, so results are machine-readable by default.
+- Developed and tested against an isolated, containerized lab network to keep all scanning in-scope and reproducible.
+- Documented end to end in a developer's notebook capturing the design decisions and trade-offs behind each module.
+
+Tech: Go, TCP/IP, ARP, ICMP, Wireshark, Docker
+
 ### MergeConflict (MPX) - A small operating system written from scratch
 
 - Status: Source available
 - Context: CS 450 team project, Fall 2024
 - Link: [Release 6.0 on GitHub](https://github.com/WVU-CS450/MergeConflict/releases/tag/R6)
 
-A working multiprogramming executive: a small operating system written in C and x86 assembly and built up over a semester with a four-person team, tested under QEMU. It supports process creation and scheduling, memory allocation, an interactive command handler, and device I/O. Involved low-level debugging, careful teamwork, and the payoff of watching a real OS boot and run.
+A working multiprogramming executive: a small operating system written in C and built up over a semester with a four-person team, tested under QEMU. It supports process creation and scheduling, memory allocation, an interactive command handler, and device I/O. Involved low-level debugging, careful teamwork, and the payoff of watching a real OS boot and run.
 
 Highlights:
 
@@ -109,7 +113,7 @@ Highlights:
 - Contributed across the kernel: process control, memory management, and the command handler.
 - Practiced disciplined low-level debugging against a QEMU-emulated target.
 
-Tech: C, x86 Assembly, QEMU
+Tech: C, QEMU
 
 ### Generative AI in Programming Work - A research report
 
@@ -160,7 +164,7 @@ Pollux runs Proxmox VE and hosts most of the lab's services and workloads in Lin
 - OS: Proxmox VE
 - Screenshot: [Proxmox VE dashboard and host console](https://cjones.dev/proxmox.png)
 
-#### Castor - Debian node for experimentation and testing (Linux node)
+#### Castor - Debian node for experimentation and testing (Always on)
 
 Castor is a separate physical Debian system for additional Linux experimentation and testing. Most services run on Pollux; Castor provides another machine to work against without putting every experiment on the main host.
 
@@ -168,6 +172,7 @@ Castor is a separate physical Debian system for additional Linux experimentation
 - CPU: Intel Core i5-6500T, 4 threads
 - Memory: 16 GiB
 - OS: Debian 13 (trixie)
+- Screenshot: [Castor Debian system information in Fastfetch](https://cjones.dev/elitedesk-2-fastfetch.png)
 
 ### Services
 

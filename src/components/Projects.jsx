@@ -33,7 +33,7 @@ function Projects() {
       </section>
 
       <section className="block">
-        <h2 className="section-label">Earlier work</h2>
+        <h2 className="section-label">Other projects</h2>
         <div className="project-stack">
           {rest.map((p) => (
             <ProjectCard key={p.slug} project={p} />
