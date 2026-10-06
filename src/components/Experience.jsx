@@ -2,6 +2,7 @@
 import { useEffect } from 'react';
 
 import transition from '../transition';
+import TypedHeading from './TypedHeading';
 import { experience } from '../data/content';
 
 function Experience() {
@@ -14,7 +15,7 @@ function Experience() {
   return (
     <main className="page">
       <header className="page-head">
-        <h1>Experience</h1>
+        <TypedHeading>Experience</TypedHeading>
         <p className="page-sub">Where I&apos;ve worked, taught, and researched so far.</p>
       </header>
 

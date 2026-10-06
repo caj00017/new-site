@@ -2,17 +2,16 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Avatar from 'react-avatar';
-import TypeIt from 'typeit';
 
 import transition from '../transition';
 import ProjectCard from './ProjectCard';
 import ContactLinks from './ContactLinks';
+import TypedHeading from './TypedHeading';
 import { profile, projects } from '../data/content';
 
 function Home() {
   useEffect(() => {
     window.scrollTo(0, 0);
-    new TypeIt('#title', { speed: 28, waitUntilVisible: true }).go();
   }, []);
 
   const featured = projects.filter((p) => p.featured);
@@ -22,7 +21,7 @@ function Home() {
       <header className="hero">
         <div className="hero-text">
           <p className="hero-eyebrow">Hi, I&apos;m</p>
-          <h1 id="title">{profile.name}</h1>
+          <TypedHeading id="title">{profile.name}</TypedHeading>
           <p className="hero-title">{profile.title}</p>
           <p className="hero-tagline">{profile.tagline}</p>
           <ContactLinks />

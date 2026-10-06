@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 
 import transition from '../transition';
 import ProjectCard from './ProjectCard';
+import TypedHeading from './TypedHeading';
 import { projects } from '../data/content';
 
 function Projects() {
@@ -16,7 +17,7 @@ function Projects() {
   return (
     <main className="page">
       <header className="page-head">
-        <h1>Projects</h1>
+        <TypedHeading>Projects</TypedHeading>
         <p className="page-sub">
           A mix of things I&apos;m building now, coursework I&apos;m proud of, and writing I&apos;ve done
           along the way.

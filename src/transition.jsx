@@ -1,6 +1,11 @@
 import { motion } from "framer-motion";
 
+// Set to true to restore the page transition animations.
+const ENABLE_PAGE_TRANSITIONS = false;
+
 const transition = (OgComponent) => {
+    if (!ENABLE_PAGE_TRANSITIONS) return OgComponent;
+
     const Transition = () => (
         <>
             <OgComponent />

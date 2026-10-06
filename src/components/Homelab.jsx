@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 
 import transition from '../transition';
 import LabShot from './LabShot';
+import TypedHeading from './TypedHeading';
 import { homelab } from '../data/content';
 
 function Homelab() {
@@ -13,7 +14,7 @@ function Homelab() {
   return (
     <main className="page">
       <header className="page-head">
-        <h1>Homelab</h1>
+        <TypedHeading>Homelab</TypedHeading>
         <p className="page-sub">{homelab.tagline}</p>
       </header>
 

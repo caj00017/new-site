@@ -4,6 +4,7 @@ import Avatar from 'react-avatar';
 
 import transition from '../transition';
 import ContactLinks from './ContactLinks';
+import TypedHeading from './TypedHeading';
 import { profile, education, skills } from '../data/content';
 
 function About() {
@@ -14,7 +15,7 @@ function About() {
   return (
     <main className="page">
       <header className="page-head">
-        <h1>About</h1>
+        <TypedHeading>About</TypedHeading>
         <p className="page-sub">A bit more about who I am and what I&apos;m after.</p>
       </header>
 

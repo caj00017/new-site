@@ -1,6 +1,7 @@
 // src/components/Nav.jsx
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import ThemeToggle from './ThemeToggle';
 
 const links = [
   { to: '/', label: 'Home', end: true },
@@ -20,17 +21,6 @@ function Nav() {
           CJ<span className="nav-brand-dot">.</span>
         </NavLink>
 
-        <button
-          className="nav-toggle"
-          aria-label="Toggle navigation menu"
-          aria-expanded={open}
-          onClick={() => setOpen((v) => !v)}
-        >
-          <span />
-          <span />
-          <span />
-        </button>
-
         <ul className={`nav-links ${open ? 'is-open' : ''}`}>
           {links.map((l) => (
             <li key={l.to}>
@@ -45,6 +35,21 @@ function Nav() {
             </li>
           ))}
         </ul>
+
+        <div className="nav-actions">
+          <ThemeToggle />
+          <button
+            type="button"
+            className="nav-toggle"
+            aria-label="Toggle navigation menu"
+            aria-expanded={open}
+            onClick={() => setOpen((v) => !v)}
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+        </div>
       </div>
     </nav>
   );
