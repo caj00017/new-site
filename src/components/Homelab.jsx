@@ -71,7 +71,13 @@ function Homelab() {
 
       <section className="block">
         <h2 className="section-label">Observability</h2>
-        <p className="block-intro">{homelab.observability.intro}</p>
+        <p className="block-intro">
+          {homelab.observability.intro}{' '}
+          The lab is open-source:{' '}
+          <a href={homelab.observability.repository} target="_blank" rel="noopener noreferrer">
+            view mcserver-observability-lab on GitHub
+          </a>.
+        </p>
         <LabShot {...homelab.observability.screenshot} />
         <div className="lab-detail-grid lab-observability-tools">
           {homelab.observability.tools.map((tool) => (

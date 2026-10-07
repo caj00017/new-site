@@ -258,6 +258,7 @@ export const homelab = {
   ],
   observability: {
     intro: 'I use Prometheus, Grafana, Loki, and Grafana Alloy to monitor workloads I actually run. The Minecraft dashboard brings metrics and logs together so I can check whether the server is available and see what is happening inside the container.',
+    repository: 'https://github.com/caj00017/mcserver-observability-lab',
     tools: [
       { heading: 'Prometheus', body: 'Collects and stores metrics from homelab workloads.' },
       { heading: 'Grafana', body: 'Visualizes metrics and logs in dashboards.' },
@@ -305,11 +306,11 @@ export const skills = [
   },
   {
     group: 'Programming & automation',
-    items: ['Go', 'Python', 'Bash', 'PowerShell', 'C', 'Java', 'JavaScript', 'HTML / CSS', 'Ansible', 'Git / GitHub'],
+    items: ['Go', 'Python', 'Bash', 'C', 'Java', 'JavaScript', 'HTML / CSS', 'Git / GitHub'],
   },
   {
     group: 'Infrastructure & virtualization',
-    items: ['Proxmox VE', 'LXC', 'Docker', 'Docker Swarm', 'QEMU', 'Pi-hole', 'Tailscale', 'Jellyfin', 'NeoForge'],
+    items: ['Proxmox VE', 'LXC', 'Docker', 'Docker Swarm', 'QEMU', 'Pi-hole', 'Tailscale', 'Jellyfin'],
   },
   {
     group: 'Observability',
@@ -317,7 +318,7 @@ export const skills = [
   },
   {
     group: 'Frameworks & data platforms',
-    items: ['React', 'Vite', '.NET 8', 'Node.js', 'Apache Spark', 'Apache Hadoop', 'MySQL', 'Firestore', 'Firebase Hosting', 'OAuth 2.0'],
+    items: ['React', 'Vite', 'Node.js', 'Apache Spark', 'MySQL', 'Firestore', 'Firebase Hosting'],
   },
   {
     group: 'Writing & research',

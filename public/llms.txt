@@ -31,10 +31,10 @@ Right now he is writing a network mapper in Go to learn the language and the pro
 
 - Linux & systems: Linux administration, Debian 13, Ubuntu Server, Arch, systemd, SSH, Users / groups / permissions, apt, Storage / filesystems, Apache HTTP Server
 - Networking & troubleshooting: TCP/IP, DNS, ARP, ICMP, Wireshark, Linux networking, Local firewalls, Hardware / software troubleshooting
-- Programming & automation: Go, Python, Bash, PowerShell, C, Java, JavaScript, HTML / CSS, Ansible, Git / GitHub
-- Infrastructure & virtualization: Proxmox VE, LXC, Docker, Docker Swarm, QEMU, Pi-hole, Tailscale, Jellyfin, NeoForge
+- Programming & automation: Go, Python, Bash, C, Java, JavaScript, HTML / CSS, Git / GitHub
+- Infrastructure & virtualization: Proxmox VE, LXC, Docker, Docker Swarm, QEMU, Pi-hole, Tailscale, Jellyfin
 - Observability: Prometheus, Grafana, Loki, Grafana Alloy
-- Frameworks & data platforms: React, Vite, .NET 8, Node.js, Apache Spark, Apache Hadoop, MySQL, Firestore, Firebase Hosting, OAuth 2.0
+- Frameworks & data platforms: React, Vite, Node.js, Apache Spark, MySQL, Firestore, Firebase Hosting
 - Writing & research: Technical writing, Research, Architecture documentation
 - Spoken: English (native), Spanish (intermediate)
 
@@ -184,6 +184,7 @@ Castor is a separate physical Debian system for additional Linux experimentation
 
 Prometheus, Grafana, Loki, and Grafana Alloy monitor workloads running in the lab. The Minecraft dashboard brings metrics and logs together to check server availability and see what is happening inside the container.
 
+- Open-source repository: [mcserver-observability-lab](https://github.com/caj00017/mcserver-observability-lab)
 - Prometheus: Collects and stores metrics from homelab workloads.
 - Grafana: Visualizes metrics and logs in dashboards.
 - Loki: Stores logs for querying alongside metrics in Grafana.
