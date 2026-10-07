@@ -2,21 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <script>
-      // Apply the theme before the page paints to avoid flashing the wrong colors.
-      (() => {
-        let theme;
-        try {
-          theme = localStorage.getItem('theme');
-        } catch {
-          // Storage may be unavailable; fall back to the device preference.
-        }
-        if (theme !== 'light' && theme !== 'dark') {
-          theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-        }
-        document.documentElement.dataset.theme = theme;
-      })();
-    </script>
+    <script src="/theme.js"></script>
     <link rel="icon" type="image/svg+xml" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
